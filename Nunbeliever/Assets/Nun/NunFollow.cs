@@ -23,8 +23,8 @@ public class NunFollow : MonoBehaviour
     public int[] HuntChance;
 
     private Vector3 previousDestination;
-    private int wanderingTime = 0;
-    private int wanderingTreshhold = 1000;
+    public int wanderingTime = 0;
+    public int wanderingTreshhold = 1000;
     public int wanderDistance = 8;
 
     //public AwarenessDisplay AwarenessDisplay;
@@ -37,7 +37,7 @@ public class NunFollow : MonoBehaviour
 
         if (Physics.Raycast(Agent.transform.position, delta.normalized, out RaycastHit hitInfo, length + 1) || !MustBeVisible)
         {
-            if (hitInfo.collider.CompareTag("Player") || !MustBeVisible)
+            if (hitInfo.collider.CompareTag("player") || !MustBeVisible)
             {
                 Agent.destination = Player.transform.position;
             }
@@ -52,7 +52,7 @@ public class NunFollow : MonoBehaviour
         //    }
         //}
 
-        huntTimer += Time.deltaTime;
+        //huntTimer += Time.deltaTime;
 
         //Wandering
         if (wanderingTime > wanderingTreshhold)
