@@ -10,8 +10,11 @@ public class WanderState : State
     public GameObject Player;
     public NavMeshAgent Agent;
     public bool MustBeVisible;
-    private GameObject Nun;
-
+    public GameObject Nun;
+    private int wanderingTime = 0;
+    private int wanderingTreshhold = 3000;
+    private int wanderDistance = 20;
+    public Vector3 previousPosition;
 
     private void Start()
     {
@@ -23,6 +26,8 @@ public class WanderState : State
 
     public override State RunCurrentState()
     {
+        Agent.speed = 1.5f;
+        Walk();
         if (LookForPlayer())
         {
             return chaseState;
@@ -42,11 +47,7 @@ public class WanderState : State
         {
             if (hitInfo.collider.CompareTag("player") || !MustBeVisible)
             {
-                //Vector3 tmp = Player.transform.position;
-                //tmp.x = Mathf.Round(tmp.x);
-                //tmp.y = Mathf.Round(tmp.y);
-                //tmp.z = Mathf.Round(tmp.z);
-                //Agent.destination = tmp;
+                Agent.destination = Player.transform.position;
                 return true;
             }
             else
@@ -58,5 +59,20 @@ public class WanderState : State
         {
             return false;
         }
+    }
+
+    private void Walk()
+    {
+        if (wanderingTime > wanderingTreshhold)
+        {
+            if (previousPosition == Agent.transform.position)
+            {
+                Vector3 randomDirection = Random.insideUnitSphere * wanderDistance;
+                Agent.destination += randomDirection;
+            }
+            previousPosition = Agent.transform.position;
+            wanderingTime = 0;
+        }
+        wanderingTime += Random.Range(1, 3);
     }
 }

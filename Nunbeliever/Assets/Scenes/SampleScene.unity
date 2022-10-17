@@ -319,6 +319,8 @@ MonoBehaviour:
   Player: {fileID: 0}
   Agent: {fileID: 0}
   MustBeVisible: 0
+  Nun: {fileID: 0}
+  previousPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &490414341
 Transform:
   m_ObjectHideFlags: 0
@@ -936,6 +938,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   searchState: {fileID: 2119363296}
   lostPlayer: 0
+  Player: {fileID: 0}
+  Agent: {fileID: 0}
+  MustBeVisible: 0
+  Nun: {fileID: 0}
+  chaseTime: 0
+  chaseLimit: 2000
+  previousPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1622420872
 Transform:
   m_ObjectHideFlags: 0
@@ -981,8 +990,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderState: {fileID: 490414340}
+  chaseState: {fileID: 1622420871}
   searchTime: 0
-  searchLimit: 5000
+  searchLimit: 10000
+  Player: {fileID: 0}
+  Agent: {fileID: 0}
+  MustBeVisible: 0
+  Nun: {fileID: 0}
+  previousPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &2119363297
 Transform:
   m_ObjectHideFlags: 0

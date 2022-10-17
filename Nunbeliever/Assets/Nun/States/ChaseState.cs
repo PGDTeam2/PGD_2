@@ -10,8 +10,9 @@ public class ChaseState : State
     public UnityEngine.AI.NavMeshAgent Agent;
     public bool MustBeVisible;
     public GameObject Nun;
-    public int stayTime = 0;
-    public int stayLimit = 3000;
+    public int chaseTime = 0;
+    public int chaseLimit = 2000;
+    public Vector3 previousPosition;
 
     private void Start()
     {
@@ -23,19 +24,28 @@ public class ChaseState : State
 
     public override State RunCurrentState()
     {
+        Agent.speed = 3f;
         if (!LookForPlayer())
         {
-
+            chaseTime++;
         }
-
-        if (lostPlayer)
+        else
         {
+            chaseTime--;
+        }
+        if(chaseTime < 0) chaseTime = 0;
+        previousPosition = Agent.transform.position;
+
+        if (chaseTime > chaseLimit && previousPosition == Agent.transform.position)
+        {
+            chaseTime = 0;
             return searchState;
         }
         else
         {
             return this;
         }
+
     }
 
     public bool LookForPlayer()
@@ -47,11 +57,7 @@ public class ChaseState : State
         {
             if (hitInfo.collider.CompareTag("player") || !MustBeVisible)
             {
-                Vector3 tmp = Player.transform.position;
-                tmp.x = Mathf.Round(tmp.x);
-                tmp.y = Mathf.Round(tmp.y);
-                tmp.z = Mathf.Round(tmp.z);
-                Agent.destination = tmp;
+                Agent.destination = Player.transform.position;
                 return true;
             }
             else
