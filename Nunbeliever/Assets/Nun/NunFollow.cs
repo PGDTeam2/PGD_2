@@ -33,6 +33,23 @@ public class NunFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (huntTimer > HuntInterval)
+        //{
+        //    huntTimer = huntTimer - HuntInterval;
+        //    if (Random.Range(0, 100) < HuntChance[Awareness])
+        //    {
+        //        Agent.destination = Player.transform.position;
+        //    }
+        //}
+
+        //huntTimer += Time.deltaTime;
+        //LookForPlayer();
+        Walk();
+
+    }
+
+    public bool LookForPlayer()
+    {
         var delta = Player.transform.position - Agent.transform.position;
         float length = (Player.transform.position - Agent.transform.position).magnitude;
 
@@ -45,25 +62,20 @@ public class NunFollow : MonoBehaviour
                 tmp.y = Mathf.Round(tmp.y);
                 tmp.z = Mathf.Round(tmp.z);
                 Agent.destination = tmp;
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-
-        //if (huntTimer > HuntInterval)
-        //{
-        //    huntTimer = huntTimer - HuntInterval;
-        //    if (Random.Range(0, 100) < HuntChance[Awareness])
-        //    {
-        //        Agent.destination = Player.transform.position;
-        //    }
-        //}
-
-        //huntTimer += Time.deltaTime;
-
-        Wandering();
-
+        else
+        {
+            return false;
+        }
     }
 
-    private void Wandering()
+    private void Walk()
     {
         if (wandering)
         {

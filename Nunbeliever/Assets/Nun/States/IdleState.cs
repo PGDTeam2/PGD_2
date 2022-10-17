@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public ChaseState chaseState;
-    public bool canSeeThePlayer;
+    public WanderState wanderState;
+    public bool allowMoving = true;
 
     public override State RunCurrentState()
     {
-        if (canSeeThePlayer)
+        if (allowMoving)
         {
-            return chaseState;
+            return wanderState;
         }
         else
         {

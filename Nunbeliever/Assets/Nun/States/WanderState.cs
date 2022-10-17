@@ -1,36 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class ChaseState : State
+public class WanderState : State
 {
-    public SearchState searchState;
-    public bool lostPlayer;
+    public ChaseState chaseState;
+    public bool canSeeThePlayer;
     public GameObject Player;
-    public UnityEngine.AI.NavMeshAgent Agent;
+    public NavMeshAgent Agent;
     public bool MustBeVisible;
-    public GameObject Nun;
-    public int stayTime = 0;
-    public int stayLimit = 3000;
+    private GameObject Nun;
+
 
     private void Start()
     {
         Nun = GameObject.FindWithTag("Nun");
-        Agent = Nun.GetComponent<UnityEngine.AI.NavMeshAgent>();
+        Agent = Nun.GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("player");
         MustBeVisible = true;
     }
 
     public override State RunCurrentState()
     {
-        if (!LookForPlayer())
+        if (LookForPlayer())
         {
-
-        }
-
-        if (lostPlayer)
-        {
-            return searchState;
+            return chaseState;
         }
         else
         {
@@ -47,11 +42,11 @@ public class ChaseState : State
         {
             if (hitInfo.collider.CompareTag("player") || !MustBeVisible)
             {
-                Vector3 tmp = Player.transform.position;
-                tmp.x = Mathf.Round(tmp.x);
-                tmp.y = Mathf.Round(tmp.y);
-                tmp.z = Mathf.Round(tmp.z);
-                Agent.destination = tmp;
+                //Vector3 tmp = Player.transform.position;
+                //tmp.x = Mathf.Round(tmp.x);
+                //tmp.y = Mathf.Round(tmp.y);
+                //tmp.z = Mathf.Round(tmp.z);
+                //Agent.destination = tmp;
                 return true;
             }
             else
