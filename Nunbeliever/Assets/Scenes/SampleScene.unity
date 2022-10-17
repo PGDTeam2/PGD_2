@@ -258,7 +258,11 @@ MonoBehaviour:
   MaxAwareness: 0
   HuntInterval: 0
   HuntChance: 
+  previousDestination: {x: 0, y: 0, z: 0}
+  wanderingTime: 0
+  wanderingTreshhold: 1000
   wanderDistance: 8
+  wandering: 1
 --- !u!195 &613489507
 NavMeshAgent:
   m_ObjectHideFlags: 0

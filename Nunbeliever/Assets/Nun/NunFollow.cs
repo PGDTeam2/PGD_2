@@ -22,10 +22,11 @@ public class NunFollow : MonoBehaviour
     private float huntTimer;
     public int[] HuntChance;
 
-    private Vector3 previousDestination;
+    public Vector3 previousDestination;
     public int wanderingTime = 0;
     public int wanderingTreshhold = 1000;
-    public int wanderDistance = 8;
+    public int wanderDistance = 12;
+    public bool wandering = true; //Later StateMachine
 
     //public AwarenessDisplay AwarenessDisplay;
 
@@ -39,7 +40,11 @@ public class NunFollow : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("player") || !MustBeVisible)
             {
-                Agent.destination = Player.transform.position;
+                Vector3 tmp = Player.transform.position;
+                tmp.x = Mathf.Round(tmp.x);
+                tmp.y = Mathf.Round(tmp.y);
+                tmp.z = Mathf.Round(tmp.z);
+                Agent.destination = tmp;
             }
         }
 
@@ -54,10 +59,29 @@ public class NunFollow : MonoBehaviour
 
         //huntTimer += Time.deltaTime;
 
-        //Wandering
+        Wandering();
+
+    }
+
+    private void Wandering()
+    {
+        if (wandering)
+        {
+            wanderingTreshhold = 2000;
+            wanderDistance = 20;
+            Agent.speed = 1.5f;
+            
+        }
+        else
+        {
+            wanderingTreshhold = 1000;
+            wanderDistance = 8;
+            Agent.speed = 3.5f;
+
+        }
         if (wanderingTime > wanderingTreshhold)
         {
-            if (Agent.destination == previousDestination)
+            if (Agent.destination == previousDestination || wandering)
             {
                 Vector3 randomDirection = Random.insideUnitSphere * wanderDistance;
                 Agent.destination += randomDirection;
@@ -66,7 +90,5 @@ public class NunFollow : MonoBehaviour
             wanderingTime = 0;
         }
         wanderingTime += Random.Range(1, 3);
-
-
     }
 }
