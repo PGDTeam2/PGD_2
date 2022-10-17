@@ -89,12 +89,8 @@ public class SearchState : State
         {
             if (previousPosition == Agent.transform.position)
             {
-                //do
-                {
-                    Vector3 randomDirection = Random.insideUnitSphere * wanderDistance;
-                    Agent.destination = randomDirection + lastPlayerPosition;
-                    Debug.Log(Vector3.Distance(Agent.destination, lastPlayerPosition));
-                } //while (Vector3.Distance(Agent.destination, lastPlayerPosition) > 100);
+                Vector3 randomDirection = Random.insideUnitSphere * wanderDistance;
+                Agent.destination = randomDirection + lastPlayerPosition;
             }
             previousPosition = Agent.transform.position;
             wanderingTime = 0;

@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderState: {fileID: 490414340}
-  allowMoving: 0
+  allowMoving: 1
 --- !u!4 &542572724
 Transform:
   m_ObjectHideFlags: 0
