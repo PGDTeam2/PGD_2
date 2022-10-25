@@ -5,13 +5,14 @@ using UnityEngine;
 public class ChaseState : State
 {
     public SearchState searchState;
+    public KillState killState;
     public bool lostPlayer;
     public GameObject Player;
     public UnityEngine.AI.NavMeshAgent Agent;
     public bool MustBeVisible;
     public GameObject Nun;
     public int chaseTime = 0;
-    public int chaseLimit = 2000;
+    public int chaseLimit = 500;
     public Vector3 previousPosition;
 
     private void Start()
@@ -35,6 +36,11 @@ public class ChaseState : State
         }
         if(chaseTime < 0) chaseTime = 0;
         previousPosition = Agent.transform.position;
+
+        if(Vector3.Distance(Agent.transform.position, Player.transform.position) < 1)
+        {
+            return killState;
+        }
 
         if (chaseTime > chaseLimit && previousPosition == Agent.transform.position)
         {
