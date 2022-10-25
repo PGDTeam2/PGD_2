@@ -33,21 +33,6 @@ public class NunFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var delta = Player.transform.position - Agent.transform.position;
-        float length = (Player.transform.position - Agent.transform.position).magnitude;
-
-        if (Physics.Raycast(Agent.transform.position, delta.normalized, out RaycastHit hitInfo, length + 1) || !MustBeVisible)
-        {
-            if (hitInfo.collider.CompareTag("player") || !MustBeVisible)
-            {
-                Vector3 tmp = Player.transform.position;
-                tmp.x = Mathf.Round(tmp.x);
-                tmp.y = Mathf.Round(tmp.y);
-                tmp.z = Mathf.Round(tmp.z);
-                Agent.destination = tmp;
-            }
-        }
-
         //if (huntTimer > HuntInterval)
         //{
         //    huntTimer = huntTimer - HuntInterval;
@@ -59,36 +44,6 @@ public class NunFollow : MonoBehaviour
 
         //huntTimer += Time.deltaTime;
 
-        Wandering();
-
     }
 
-    private void Wandering()
-    {
-        if (wandering)
-        {
-            wanderingTreshhold = 2000;
-            wanderDistance = 20;
-            Agent.speed = 1.5f;
-            
-        }
-        else
-        {
-            wanderingTreshhold = 1000;
-            wanderDistance = 8;
-            Agent.speed = 3.5f;
-
-        }
-        if (wanderingTime > wanderingTreshhold)
-        {
-            if (Agent.destination == previousDestination || wandering)
-            {
-                Vector3 randomDirection = Random.insideUnitSphere * wanderDistance;
-                Agent.destination += randomDirection;
-            }
-            previousDestination = Agent.transform.position;
-            wanderingTime = 0;
-        }
-        wanderingTime += Random.Range(1, 3);
-    }
 }
