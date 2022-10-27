@@ -26,17 +26,17 @@ public class VisualEffectsPlayer : MonoBehaviour
             timer += Time.deltaTime * walkingBobbingSpeed;
             playerMoving();
         }
-        else if (controller.Stamina == 0)
+       else if (controller.Stamina == 0)
         {
             timer += 0.008f;
             playerMoving();
         }
-
-
+        
+     
     }
 
     void playerMoving()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, defaultPosY + Mathf.Sin(timer) * bobbingAmount, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, defaultPosY + Mathf.Sin(timer) * bobbingAmount, transform.localPosition.z); 
     }
 }

@@ -44,6 +44,7 @@ public class AngelGrab : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
         if (other.CompareTag("player") && m_CanGrab)
         {
             m_PlayerController = other.GetComponent<PlayerController>();
