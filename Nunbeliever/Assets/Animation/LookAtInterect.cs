@@ -10,7 +10,7 @@ public class LookAtInterect : MonoBehaviour
     [SerializeField]
     private int range = 3;
     
-    public void Interact()
+    public virtual void Interact()
     {
         if (Physics.Raycast(camera.position,camera.forward, out hit, range))
         {

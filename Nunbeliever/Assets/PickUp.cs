@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class PickUp : LookAtInterect
 {
     
     // Start is called before the first frame update
@@ -17,4 +17,8 @@ public class PickUp : MonoBehaviour
         
     }
 
+    public override void Interact()
+    {
+        base.Interact();
+    }
 }
