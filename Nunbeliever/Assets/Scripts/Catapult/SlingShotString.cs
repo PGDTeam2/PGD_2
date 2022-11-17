@@ -22,7 +22,7 @@ public class SlingShotString : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         slingShotString.SetPositions(new Vector3[3]{ left.position, centre.position, right.position});
     }

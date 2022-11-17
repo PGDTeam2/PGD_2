@@ -8,7 +8,7 @@ public class SlingShot : MonoBehaviour
     public Transform Projectile;
     public Transform DrawFrom;
     public Transform DrawTo;
-
+ 
     public SlingShotString slingshotString;
     public int NrDrawIncrements = 10;
 
@@ -19,12 +19,12 @@ public class SlingShot : MonoBehaviour
     // Start is callerd before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         Debug.Log(Quaternion.identity);
         if (Input.GetKeyDown(KeyCode.LeftShift))
             DrawSlingShot(1);
