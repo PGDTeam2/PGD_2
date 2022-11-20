@@ -28,21 +28,17 @@ public class WalkingPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!chasingPlayer.FindPlayer())
+        if (!chasingPlayer.FindPlayer() && !chasingPlayer.playerCaught)
         {
             if (nextWaypoint == null)
             {
                 nextWaypoint = waypointList[currentWaypoint];
-
             }
             Patrol();
         }
     }
     void Patrol()
     {
-        //Facing towards the destination
-        
-
         //Moving towards the destination
         agent.destination = waypointList[currentWaypoint].transform.position;
         
@@ -63,4 +59,5 @@ public class WalkingPath : MonoBehaviour
             }
         }
     }
+    
 }
