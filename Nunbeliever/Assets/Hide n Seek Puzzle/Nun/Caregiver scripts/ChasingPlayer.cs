@@ -5,14 +5,17 @@ using UnityEngine.AI;
 
 public class ChasingPlayer : MonoBehaviour
 {
-    private NavMeshAgent agent;
     [SerializeField] private GameObject player;
     [SerializeField] private float fov = 90;
     [SerializeField] private float grabLength = 0.4f;
     [SerializeField] private Transform playerSpawnPoint;
 
+    private NavMeshAgent agent;
+
     internal bool playerCaught;
     internal bool goBackPatrol;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +29,28 @@ public class ChasingPlayer : MonoBehaviour
         FindPlayer();
         if (playerCaught)
         {
-            CatchingPlayer();
+            bringingPlayerBackToSpawn();
         }
     }
+
     internal bool FindPlayer()
     {
         var distance = player.transform.position - transform.position;
-        float length = (player.transform.position - transform.position).magnitude;
 
+        //Calculates the angle from which the agent can see the player
         if (Vector3.Angle(transform.forward, distance.normalized) < fov / 2)
         {
+            float length = (player.transform.position - transform.position).magnitude;
+
+            //Calculates the agents raycast
             if (Physics.Raycast(transform.position, distance.normalized, out RaycastHit hitInfo, length + 1))
             {
+                //checks if the raycast hits the player and checks if the agent isnt coming back from the spawnpoint
                 if (hitInfo.collider.CompareTag("player") && !goBackPatrol)
                 {
                     agent.destination = player.transform.position;
+
+                    //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance < grabLength)
                     {
                         playerCaught = true;
@@ -53,23 +63,27 @@ public class ChasingPlayer : MonoBehaviour
         }
         else return false;
     }
-    private bool CatchingPlayer()
+
+    private bool bringingPlayerBackToSpawn()
     {
+        //when the agent isn't located on the spawnpoint move towards the spawnpoint
         if (transform.position.x != playerSpawnPoint.transform.position.x && 
             transform.position.z != playerSpawnPoint.transform.position.z)
         {
             agent.destination = playerSpawnPoint.transform.position;
+
+            //moves the player with the agents so the agent automatically creates the path for both objects
             player.transform.position = transform.position;
             return true;
         }
         else 
         {
-            StartCoroutine(moveBack());
+            StartCoroutine(goBackToPatrol());
             return false; 
         }
 
     }
-    internal IEnumerator moveBack()
+    internal IEnumerator goBackToPatrol()
     {
         goBackPatrol = true;
         playerCaught = false;

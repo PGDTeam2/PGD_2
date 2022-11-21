@@ -16,13 +16,12 @@ public class WalkingPath : MonoBehaviour
 
     private NavMeshAgent agent;
     private Transform nextWaypoint;
-    
 
     // Start is called before the first frame update
     void Start()
     {
-       chasingPlayer = GetComponent<ChasingPlayer>();
-       agent = GetComponent<NavMeshAgent>();
+        chasingPlayer = GetComponent<ChasingPlayer>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -37,7 +36,7 @@ public class WalkingPath : MonoBehaviour
             Patrol();
         }
     }
-    void Patrol()
+    private void Patrol()
     {
         //Moving towards the destination
         agent.destination = waypointList[currentWaypoint].transform.position;
@@ -46,18 +45,17 @@ public class WalkingPath : MonoBehaviour
         if (transform.position.x == waypointList[currentWaypoint].transform.position.x &&
            transform.position.z == waypointList[currentWaypoint].transform.position.z)
         {
-            
-            if (currentWaypoint < waypointList.Length - 1)
-            {
-                currentWaypoint++;
-                nextWaypoint = waypointList[currentWaypoint]; 
-            }
-            else
-            {
-                currentWaypoint = 0;
-                nextWaypoint = null;
-            }
+
+                if (currentWaypoint < waypointList.Length - 1)
+                {
+                    currentWaypoint++;
+                    nextWaypoint = waypointList[currentWaypoint];
+                }
+                else
+                {
+                    currentWaypoint = 0;
+                    nextWaypoint = null;
+                }
         }
     }
-    
 }
