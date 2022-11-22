@@ -9,9 +9,6 @@ public class WalkingPath : MonoBehaviour
     [SerializeField] private Transform[] waypointList;
     [SerializeField] private int currentWaypoint = 0;
 
-    [Header("Agent Variables")]
-    [SerializeField] private float speed = 3;
-
     private ChasingPlayer chasingPlayer;
 
     private NavMeshAgent agent;
