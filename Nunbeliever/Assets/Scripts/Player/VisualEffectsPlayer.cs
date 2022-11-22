@@ -28,7 +28,7 @@ public class VisualEffectsPlayer : MonoBehaviour
         }
        else if (controller.Stamina == 0)
         {
-            timer += 0.05f;
+            timer += 0.008f;
             playerMoving();
         }
         
