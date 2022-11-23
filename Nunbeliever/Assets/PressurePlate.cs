@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    [SerializeField]
-    PuzzleController puzzleController;
+    private PuzzleController puzzleController;
+    private ParticleSystem.EmissionModule particles;
     public bool remainPressed;
+    public char puzzleInput;
 
     private bool pressed = false;
 
     private void Awake()
     {
+
         puzzleController = GetComponentInParent<PuzzleController>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,7 +24,15 @@ public class PressurePlate : MonoBehaviour
         {
             pressed = true;
             puzzleController.activatedPuzzlePieces++;
-            Debug.Log("yeet");
+
+            GetComponentInChildren<ParticleSystem>().Play();
+
+
+            if (puzzleController.orderPuzzle)
+            {
+                //Debug.Log(puzzleInput);
+                puzzleController.addCharacter(puzzleInput);
+            }
         }
     }
 
@@ -31,7 +42,20 @@ public class PressurePlate : MonoBehaviour
         {
             pressed = false;
             puzzleController.activatedPuzzlePieces--;
-            Debug.Log("yote");
+
+            GetComponentInChildren<ParticleSystem>().Stop();
+
+            if (puzzleController.orderPuzzle)
+            {
+                puzzleController.removeCharacter(puzzleInput);
+            }
         }
+    }
+
+    public void ResetButton()
+    {
+        if(pressed) puzzleController.activatedPuzzlePieces--;
+        pressed = false;
+        GetComponentInChildren<ParticleSystem>().Stop();
     }
 }
