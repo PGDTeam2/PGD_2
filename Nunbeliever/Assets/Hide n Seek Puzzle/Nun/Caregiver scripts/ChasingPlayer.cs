@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ChasingPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] public GameObject player;
     [SerializeField] private float fov = 90;
     [SerializeField] private float grabLength = 0.4f;
     [SerializeField] private Transform playerSpawnPoint;
@@ -26,6 +26,7 @@ public class ChasingPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(playerCaught);
         FindPlayer();
         if (playerCaught)
         {
@@ -41,7 +42,6 @@ public class ChasingPlayer : MonoBehaviour
         if (Vector3.Angle(transform.forward, distance.normalized) < fov / 2)
         {
             float length = (player.transform.position - transform.position).magnitude;
-
             //Calculates the agents raycast
             if (Physics.Raycast(transform.position, distance.normalized, out RaycastHit hitInfo, length + 1))
             {
@@ -49,10 +49,11 @@ public class ChasingPlayer : MonoBehaviour
                 if (hitInfo.collider.CompareTag("player") && !goBackPatrol)
                 {
                     agent.destination = player.transform.position;
-
+                   
                     //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance < grabLength)
                     {
+                        Debug.Log("w");
                         playerCaught = true;
                     }
                     return true;
@@ -63,8 +64,8 @@ public class ChasingPlayer : MonoBehaviour
         }
         else return false;
     }
-
-    private bool bringingPlayerBackToSpawn()
+   
+    internal bool bringingPlayerBackToSpawn()
     {
         //when the agent isn't located on the spawnpoint move towards the spawnpoint
         if (transform.position.x != playerSpawnPoint.transform.position.x && 
