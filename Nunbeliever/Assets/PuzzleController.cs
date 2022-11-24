@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour
 {
-    [SerializeField]
     public GameObject puzzleResult;
 
     public int puzzlePiecesNeeded;
@@ -46,7 +45,7 @@ public class PuzzleController : MonoBehaviour
                 }
                 else
                 {
-                    resetCharacters();
+                    ResetCharacters();
                 }
             }
             else
@@ -68,12 +67,12 @@ public class PuzzleController : MonoBehaviour
         }
     }
 
-    public void addCharacter(char input)
+    public void AddCharacter(char input)
     {
         inputOrder += input;
     }
 
-    public void removeCharacter(char input)
+    public void RemoveCharacter(char input)
     {
         for (int i = 0; i < inputOrder.Length; i++)
         {
@@ -84,7 +83,7 @@ public class PuzzleController : MonoBehaviour
         }
     }
 
-    public void resetCharacters()
+    public void ResetCharacters()
     {
         inputOrder = "";
 

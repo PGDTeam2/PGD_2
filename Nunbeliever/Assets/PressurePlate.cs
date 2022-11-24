@@ -35,7 +35,7 @@ public class PressurePlate : MonoBehaviour
             if (puzzleController.orderPuzzle)
             {
                 //Debug.Log(puzzleInput);
-                puzzleController.addCharacter(puzzleInput);
+                puzzleController.AddCharacter(puzzleInput);
             }
         }
     }
@@ -52,7 +52,7 @@ public class PressurePlate : MonoBehaviour
 
             if (puzzleController.orderPuzzle && !multiUse)
             {
-                puzzleController.removeCharacter(puzzleInput);
+                puzzleController.RemoveCharacter(puzzleInput);
             }
         }
     }
