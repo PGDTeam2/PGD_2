@@ -7,24 +7,30 @@ public class LoadingRoom : MonoBehaviour
 {
     [SerializeField] private GameObject door1;
     [SerializeField] private GameObject door2;
-    [SerializeField] private string nextScene;
-    private bool isSwitching;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("player"))
         {
-            door1.SetActive(true);
-            if(!isSwitching)
-            {
-                isSwitching = true;
-                StartCoroutine(LoadNextLevel());
-            }
+            other.gameObject.transform.SetParent(gameObject.transform);
+            other.gameObject.SetActive(false);
+            gameObject.transform.position += new Vector3(0, -100, 0);
+            other.gameObject.SetActive(true);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        /*if (other.CompareTag("player"))
+        {
+            other.gameObject.transform.SetParent(null);
+        }*/
     }
 
     IEnumerator LoadNextLevel()
     {
+        var nextScene = "";
+        var prevSceneName = SceneManager.GetActiveScene().name;
         AsyncOperation loading = SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
         Scene sceneToLoad = SceneManager.GetSceneByName(nextScene);
 
@@ -36,7 +42,7 @@ public class LoadingRoom : MonoBehaviour
         SceneManager.MoveGameObjectToScene(GameObject.FindWithTag("player"), sceneToLoad);
         SceneManager.SetActiveScene(sceneToLoad);
 
-        SceneManager.UnloadSceneAsync("SampleScene");
+        SceneManager.UnloadSceneAsync(prevSceneName);
 
         door2.SetActive(false);
     }
