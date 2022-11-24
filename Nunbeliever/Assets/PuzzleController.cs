@@ -11,6 +11,10 @@ public class PuzzleController : MonoBehaviour
 
     public int activatedPuzzlePieces = 0;
 
+    public bool platesStayOn = false;
+
+    public bool multipleUsePlates = false;
+
     public bool orderPuzzle = false;
 
     public string correctOrder;
@@ -18,6 +22,15 @@ public class PuzzleController : MonoBehaviour
     private string inputOrder = "";
 
     private bool puzzleComplete = false;
+
+    private PressurePlate[] pressurePlates;
+
+    private void Awake()
+    {
+        pressurePlates = GetComponentsInChildren<PressurePlate>();
+
+        Debug.Log(pressurePlates.Length);
+    }
 
     private void Update()
     {
@@ -74,12 +87,12 @@ public class PuzzleController : MonoBehaviour
     public void resetCharacters()
     {
         inputOrder = "";
-       
-
-        PressurePlate[] plates = GetComponentsInChildren<PressurePlate>();
 
 
-        foreach (PressurePlate plate in plates)
+        pressurePlates = GetComponentsInChildren<PressurePlate>();
+
+
+        foreach (PressurePlate plate in pressurePlates)
         {
             plate.ResetButton();
         }

@@ -6,20 +6,24 @@ public class PressurePlate : MonoBehaviour
 {
     private PuzzleController puzzleController;
     private ParticleSystem.EmissionModule particles;
-    public bool remainPressed;
+    private bool remainPressed;
+    private bool multiUse;
     public char puzzleInput;
 
     private bool pressed = false;
+    private int thingsOnPlate = 0;
 
     private void Awake()
     {
 
         puzzleController = GetComponentInParent<PuzzleController>();
-        
+        remainPressed = puzzleController.platesStayOn;
+        multiUse = puzzleController.multipleUsePlates;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        thingsOnPlate++;
         if (!pressed)
         {
             pressed = true;
@@ -38,14 +42,15 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(pressed && !remainPressed)
+        thingsOnPlate--;
+        if(pressed && thingsOnPlate <= 0 && !remainPressed)
         {
             pressed = false;
             puzzleController.activatedPuzzlePieces--;
 
             GetComponentInChildren<ParticleSystem>().Stop();
 
-            if (puzzleController.orderPuzzle)
+            if (puzzleController.orderPuzzle && !multiUse)
             {
                 puzzleController.removeCharacter(puzzleInput);
             }
@@ -56,6 +61,7 @@ public class PressurePlate : MonoBehaviour
     {
         if(pressed) puzzleController.activatedPuzzlePieces--;
         pressed = false;
+        //maybe eject the things on the plate
         GetComponentInChildren<ParticleSystem>().Stop();
     }
 }
