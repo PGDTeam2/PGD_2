@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 144;
     }
  
     void Update()
