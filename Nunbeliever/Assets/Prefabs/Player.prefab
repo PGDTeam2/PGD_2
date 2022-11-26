@@ -68,6 +68,7 @@ MonoBehaviour:
   walkingSpeed: 7.5
   runningSpeed: 11.5
   gravity: 9.8
+  lookAt: {fileID: 0}
   playerCamera: {fileID: 6955764209410838141}
   lookSpeed: 2
   lookXLimit: 45
@@ -103,6 +104,7 @@ GameObject:
   - component: {fileID: 6955764209410838141}
   - component: {fileID: 6955764209410838140}
   - component: {fileID: 6955764209410838142}
+  - component: {fileID: 7571662874370234391}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -191,3 +193,16 @@ MonoBehaviour:
   walkingBobbingSpeed: 13
   bobbingAmount: 0.05
   controller: {fileID: 6955764207865991739}
+--- !u!114 &7571662874370234391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955764209410838114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d340bebf2d4f6ed4abdf219164bd6108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
