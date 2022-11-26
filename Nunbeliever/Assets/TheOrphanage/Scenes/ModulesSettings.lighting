@@ -15,7 +15,6 @@ LightingSettings:
   m_BounceScale: 1
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
-  m_UsingShadowmask: 0
   m_BakeBackend: 0
   m_LightmapMaxSize: 1024
   m_BakeResolution: 80

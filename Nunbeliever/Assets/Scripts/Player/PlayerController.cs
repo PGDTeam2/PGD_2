@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float gravity = 9.8f;
-    public LookAtInterect lookAt;
+    /*public LookAtInterect lookAt;*/
 
     public Camera playerCamera;
 
@@ -42,11 +42,10 @@ public class PlayerController : MonoBehaviour
  
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.E) )
-        {
-            lookAt.Interact();
-        }*/
-
+        if (!HideMechanic.hiding) { Movement(); }
+    }
+    void Movement()
+    {
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -58,25 +57,25 @@ public class PlayerController : MonoBehaviour
         if (isRunning) { Stamina--; }
 
         //when not running the stamina will regen to MaxStamina
-        if(!isRunning && Stamina < maxStamina)
+        if (!isRunning && Stamina < maxStamina)
         {
-          StartCoroutine(RegenerateStamina());
+            StartCoroutine(RegenerateStamina());
         }
 
         //stops all CoRoutines in this script
         else if (Stamina == maxStamina)
         {
             StopAllCoroutines();
-          }
+        }
 
         //speed of the player
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
-       
+
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
         moveDirection.y = movementDirectionY;
-          
+
 
         //gravity for falling
         if (!characterController.isGrounded)
