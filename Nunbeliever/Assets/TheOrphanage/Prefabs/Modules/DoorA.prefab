@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789bb6e333ebba54f955aa9daf1eba87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoCloseTime: 0
+  autoCloseTime: 5
 --- !u!95 &1921851385414368823
 Animator:
   serializedVersion: 4
@@ -415,7 +415,7 @@ GameObject:
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4712692843169828
 Transform:
