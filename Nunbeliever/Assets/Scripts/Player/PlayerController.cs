@@ -45,10 +45,10 @@ public class PlayerController : MonoBehaviour
  
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) )
+        /*if (Input.GetKeyDown(KeyCode.E) )
         {
             lookAt.Interact();
-        }
+        }*/
 
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);

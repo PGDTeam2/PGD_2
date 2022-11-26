@@ -23,10 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024601765283208}
-  m_LocalRotation: {x: -0, y: 0.000000059604638, z: -0, w: 1}
-  m_LocalPosition: {x: 1.71, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4342177346577970}
   - {fileID: 4917163972824962}
@@ -61,14 +60,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036563641315256}
-  m_LocalRotation: {x: 0.49999693, y: -0.49999866, z: 0.5000014, w: -0.50000304}
-  m_LocalPosition: {x: 2.074, y: 1.185, z: 0.4}
+  m_LocalRotation: {x: 0.00000016292068, y: 1, z: -0.0000000059624403, w: -1.0326371e-15}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4293063647382040}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33777024672269226
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88,7 +86,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -157,14 +154,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297534399304742}
-  m_LocalRotation: {x: 0.49999684, y: -0.49999896, z: 0.50000143, w: -0.50000286}
-  m_LocalPosition: {x: 2.074, y: 1.185, z: 0.4}
+  m_LocalRotation: {x: 0.0000001629207, y: 1, z: 0.0000000814603, w: -0.00000023841856}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4293063647382040}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33261295500415126
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -184,7 +180,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -240,14 +235,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374557529725878}
-  m_LocalRotation: {x: 0.46072292, y: -0.5364864, z: 0.5358652, w: -0.4612649}
-  m_LocalPosition: {x: 2.114, y: 0.785, z: 0.39}
+  m_LocalRotation: {x: 0.00000028177976, y: 0.99716985, z: 0.000000015265535, w: -0.07518172}
+  m_LocalPosition: {x: -0.012163162, y: -0.00000001475928, z: -0.10051346}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4293063647382040}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 8.623, y: 90.01, z: -89.932}
+  m_LocalEulerAnglesHint: {x: 0, y: -171.37701, z: 0}
 --- !u!33 &33533578892288624
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -267,7 +261,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -323,14 +316,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735800079431084}
-  m_LocalRotation: {x: 0.49999702, y: -0.4999986, z: 0.50000125, w: -0.50000316}
-  m_LocalPosition: {x: 2.074, y: 1.215, z: 0.39}
+  m_LocalRotation: {x: 0.00000028212997, y: 1, z: -0.0000000059623977, w: 0.0000001509958}
+  m_LocalPosition: {x: 0.0000000012535267, y: 0.0076940916, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4293063647382040}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 450, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33225808429144590
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -350,7 +342,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
