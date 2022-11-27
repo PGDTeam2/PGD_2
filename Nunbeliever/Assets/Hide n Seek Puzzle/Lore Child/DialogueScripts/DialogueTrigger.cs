@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-
-	public Dialogue dialogue;
+    private bool alreadyTriggered = false;
+    public Dialogue dialogue;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,8 +13,11 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
 	{
-        
-		FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if (!alreadyTriggered)
+        {
+            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            alreadyTriggered = true;
+        }
 	}
 
 }

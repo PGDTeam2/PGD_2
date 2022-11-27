@@ -2,35 +2,80 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
-public class ChasingPlayer : MonoBehaviour
+public class CareGiverSM : StateMachine
 {
+    [HideInInspector] public IdleState idleState;
+    [HideInInspector] public SearchState searchState;
+    [HideInInspector] public ChaseState chaseState;
+    [HideInInspector] public CatchState catchState;
+
+    [Header("Pathfinding")]
+    [SerializeField] internal Transform[] waypointList;
+    [SerializeField] internal int currentWaypoint = 0;
+
+    [SerializeField] internal bool reachedWaypoint;
+    [SerializeField] internal NavMeshAgent agent;
+    [SerializeField] internal Transform nextWaypoint;
+
+    [Header("Catching the player")]
     [SerializeField] public GameObject player;
     [SerializeField] private float fov = 90;
-    [SerializeField] private float grabLength = 0.4f;
+    [SerializeField] private float grabLength = 1f;
     [SerializeField] private Transform playerSpawnPoint;
-
-    private NavMeshAgent agent;
+    
 
     internal bool playerCaught;
+    internal bool playerSeen;
     internal bool goBackPatrol;
 
+    Animator animator;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        idleState = new IdleState(this);
+        searchState = new SearchState(this);
+        catchState = new CatchState(this);
+        chaseState = new ChaseState(this);
+    }
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        animator = GetComponent<Animator>();
+        setState(idleState);
     }
-
-    // Update is called once per frame
-    void Update()
+    internal void setAnimation(int animationState)
     {
-        Debug.Log(playerCaught);
-        FindPlayer();
-        if (playerCaught)
+        animator.SetInteger("animation", animationState);
+    }
+    internal void Patrol()
+    {
+        //Moving towards the destination
+        agent.destination = waypointList[currentWaypoint].transform.position;
+
+        if (nextWaypoint == null)
         {
-            bringingPlayerBackToSpawn();
+            nextWaypoint = waypointList[currentWaypoint];
+        }
+
+        //When the agent reaches the waypoint it will move on to the next
+        if (transform.position.x == waypointList[currentWaypoint].transform.position.x &&
+           transform.position.z == waypointList[currentWaypoint].transform.position.z)
+        {
+
+            if (currentWaypoint < waypointList.Length - 1)
+            {
+                currentWaypoint++;
+                nextWaypoint = waypointList[currentWaypoint];
+            }
+            else
+            {
+                currentWaypoint = 0;
+                nextWaypoint = null;
+            }
+            reachedWaypoint = true;
+
         }
     }
 
@@ -48,12 +93,9 @@ public class ChasingPlayer : MonoBehaviour
                 //checks if the raycast hits the player and checks if the agent isnt coming back from the spawnpoint
                 if (hitInfo.collider.CompareTag("player") && !goBackPatrol)
                 {
-                    agent.destination = player.transform.position;
-                   
                     //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance < grabLength)
                     {
-                        Debug.Log("w");
                         playerCaught = true;
                     }
                     return true;
@@ -64,11 +106,11 @@ public class ChasingPlayer : MonoBehaviour
         }
         else return false;
     }
-   
+    
     internal bool bringingPlayerBackToSpawn()
     {
         //when the agent isn't located on the spawnpoint move towards the spawnpoint
-        if (transform.position.x != playerSpawnPoint.transform.position.x && 
+        if (transform.position.x != playerSpawnPoint.transform.position.x &&
             transform.position.z != playerSpawnPoint.transform.position.z)
         {
             agent.destination = playerSpawnPoint.transform.position;
@@ -77,13 +119,18 @@ public class ChasingPlayer : MonoBehaviour
             player.transform.position = transform.position;
             return true;
         }
-        else 
+        else
         {
             StartCoroutine(goBackToPatrol());
-            return false; 
+            return false;
         }
 
     }
+    internal void followPlayer()
+    {
+        agent.destination = player.transform.position;
+    }
+
     internal IEnumerator goBackToPatrol()
     {
         goBackPatrol = true;
@@ -92,4 +139,5 @@ public class ChasingPlayer : MonoBehaviour
         yield return new WaitForSeconds(5);
         goBackPatrol = false;
     }
+
 }
