@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
 	public GameObject dialogueScreen;
+	internal bool walkBack;
 
 
 	private Queue<string> sentences;
@@ -70,6 +71,7 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue()
 	{
+		walkBack = true;
 		dialogueScreen.SetActive(false);
 	}
 

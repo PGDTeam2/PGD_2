@@ -30,12 +30,14 @@ public class IdleState : State
     internal IEnumerator enterWalk()
     {
         sM.setAnimation(1);
+        sM.fov = 360;
         yield return new WaitForSeconds(4.5f);
         sM.setAnimation(0);
         machine.changeState(((CareGiverSM)machine).searchState);
     }
     public override void Exit()
     {
+        sM.fov = 90;
         sM.StopAllCoroutines();
         base.Exit();    
     }

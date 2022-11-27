@@ -21,9 +21,10 @@ public class CareGiverSM : StateMachine
 
     [Header("Catching the player")]
     [SerializeField] public GameObject player;
-    [SerializeField] private float fov = 90;
+    [SerializeField] internal float fov = 90;
     [SerializeField] private float grabLength = 1f;
     [SerializeField] private Transform playerSpawnPoint;
+    [SerializeField] private Transform carry;
     
 
     internal bool playerCaught;
@@ -79,6 +80,40 @@ public class CareGiverSM : StateMachine
         }
     }
 
+    
+    internal bool bringingPlayerBackToSpawn()
+    {
+        //when the agent isn't located on the spawnpoint move towards the spawnpoint
+        if (transform.position.x != playerSpawnPoint.transform.position.x &&
+            transform.position.z != playerSpawnPoint.transform.position.z)
+        {
+            agent.destination = playerSpawnPoint.transform.position;
+
+            //moves the player with the agents so the agent automatically creates the path for both objects
+            player.transform.position = carry.transform.position;
+            return true;
+        }
+        else
+        {
+            StartCoroutine(goBackToPatrol());
+            return false;
+        }
+
+    }
+    internal void followPlayer()
+    {
+        agent.destination = player.transform.position;
+    }
+
+    internal IEnumerator goBackToPatrol()
+    {
+        goBackPatrol = true;
+        playerCaught = false;
+
+        yield return new WaitForSeconds(5);
+        goBackPatrol = false;
+    }
+
     internal bool FindPlayer()
     {
         var distance = player.transform.position - transform.position;
@@ -105,39 +140,6 @@ public class CareGiverSM : StateMachine
             else return false;
         }
         else return false;
-    }
-    
-    internal bool bringingPlayerBackToSpawn()
-    {
-        //when the agent isn't located on the spawnpoint move towards the spawnpoint
-        if (transform.position.x != playerSpawnPoint.transform.position.x &&
-            transform.position.z != playerSpawnPoint.transform.position.z)
-        {
-            agent.destination = playerSpawnPoint.transform.position;
-
-            //moves the player with the agents so the agent automatically creates the path for both objects
-            player.transform.position = transform.position;
-            return true;
-        }
-        else
-        {
-            StartCoroutine(goBackToPatrol());
-            return false;
-        }
-
-    }
-    internal void followPlayer()
-    {
-        agent.destination = player.transform.position;
-    }
-
-    internal IEnumerator goBackToPatrol()
-    {
-        goBackPatrol = true;
-        playerCaught = false;
-
-        yield return new WaitForSeconds(5);
-        goBackPatrol = false;
     }
 
 }
