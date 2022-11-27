@@ -26,6 +26,10 @@ public class ChaseState : State
             machine.changeState(sM.catchState);
             return;
         }
+        if (!sM.FindPlayer())
+        {
+            machine.changeState(sM.searchState);
+        }
         
     }
     public override void Exit()

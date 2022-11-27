@@ -68,7 +68,7 @@ MonoBehaviour:
   runningSpeed: 11.5
   gravity: 9.8
   lookAt: {fileID: 0}
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 6955764209410838141}
   lookSpeed: 2
   lookXLimit: 45
   Stamina: 250
