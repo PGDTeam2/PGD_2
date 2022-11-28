@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     [SerializeField] private float autoCloseTime;
+    [SerializeField] internal bool IsLocked;
 
     private bool m_isOpen;
     private bool m_openedByNun;
@@ -51,8 +52,9 @@ public class DoorController : MonoBehaviour
             SetOpen(true);
     }
 
-    public void OnInteract()
+    public void OnInteract(bool hasKey)
     {
-        ToggleDoor();
+        if (hasKey || !IsLocked)
+            ToggleDoor();
     }
 }
