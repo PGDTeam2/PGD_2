@@ -12,6 +12,7 @@ public class DoorInteract : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, transform.forward, out var hitInfo, interactionRange))
             {
+
                 if (hitInfo.collider.CompareTag("Door"))
                 {
                     hitInfo.collider.SendMessageUpwards("OnInteract");

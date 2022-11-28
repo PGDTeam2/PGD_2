@@ -55,6 +55,8 @@ public class CareGiverSM : StateMachine
         //Moving towards the destination
         agent.destination = waypointList[currentWaypoint].transform.position;
 
+
+
         if (nextWaypoint == null)
         {
             nextWaypoint = waypointList[currentWaypoint];
@@ -64,6 +66,8 @@ public class CareGiverSM : StateMachine
         if (transform.position.x == waypointList[currentWaypoint].transform.position.x &&
            transform.position.z == waypointList[currentWaypoint].transform.position.z)
         {
+            Vector3 direction = (waypointList[currentWaypoint].transform.position - transform.position).normalized;
+            transform.rotation = Quaternion.LookRotation(direction);
 
             if (currentWaypoint < waypointList.Length - 1)
             {
