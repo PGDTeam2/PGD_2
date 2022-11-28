@@ -5,11 +5,11 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     private PuzzleController puzzleController;
-    private ParticleSystem.EmissionModule particles;
     private bool remainPressed;
     private bool multiUse;
     public char puzzleInput;
 
+    public bool locked = false;
     private bool pressed = false;
     private int thingsOnPlate = 0;
 
@@ -24,12 +24,12 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         thingsOnPlate++;
-        if (!pressed)
+        if (!pressed && !locked)
         {
             pressed = true;
             puzzleController.activatedPuzzlePieces++;
 
-            GetComponentInChildren<ParticleSystem>().Play();
+            GetComponentsInChildren<ParticleSystem>()[0].Play();
 
 
             if (puzzleController.orderPuzzle)
@@ -43,12 +43,12 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         thingsOnPlate--;
-        if(pressed && thingsOnPlate <= 0 && !remainPressed)
+        if(pressed && thingsOnPlate <= 0 && !remainPressed && !locked)
         {
             pressed = false;
             puzzleController.activatedPuzzlePieces--;
 
-            GetComponentInChildren<ParticleSystem>().Stop();
+            GetComponentsInChildren<ParticleSystem>()[0].Stop();
 
             if (puzzleController.orderPuzzle && !multiUse)
             {
@@ -62,6 +62,13 @@ public class PressurePlate : MonoBehaviour
         if(pressed) puzzleController.activatedPuzzlePieces--;
         pressed = false;
         //maybe eject the things on the plate
-        GetComponentInChildren<ParticleSystem>().Stop();
+        GetComponentsInChildren<ParticleSystem>()[0].Stop();
+        GetComponentsInChildren<ParticleSystem>()[2].Play();
+    }
+
+    public void PuzzleFinished()
+    {
+        GetComponentsInChildren<ParticleSystem>()[1].Play();
+        GetComponentsInChildren<ParticleSystem>()[0].Stop();
     }
 }

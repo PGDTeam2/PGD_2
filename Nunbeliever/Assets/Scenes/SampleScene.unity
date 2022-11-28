@@ -1425,7 +1425,7 @@ MonoBehaviour:
   puzzleResult: {fileID: 631848319}
   puzzlePiecesNeeded: 3
   activatedPuzzlePieces: 0
-  platesStayOn: 1
+  platesStayOn: 0
   multipleUsePlates: 0
   orderPuzzle: 1
   correctOrder: abc

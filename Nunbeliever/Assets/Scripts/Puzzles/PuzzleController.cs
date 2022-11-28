@@ -22,17 +22,23 @@ public class PuzzleController : MonoBehaviour
 
     private bool puzzleComplete = false;
 
+    private bool puzzleFinished = false;
+
     private PressurePlate[] pressurePlates;
 
     private void Awake()
     {
         pressurePlates = GetComponentsInChildren<PressurePlate>();
 
-        Debug.Log(pressurePlates.Length);
+        //Debug.Log(pressurePlates.Length);
     }
 
     private void Update()
     {
+        if(puzzleComplete && platesStayOn && !puzzleFinished)
+        {
+            PuzzleFinished();
+        }
 
         if (activatedPuzzlePieces >= puzzlePiecesNeeded && !puzzleComplete)
         {
@@ -83,12 +89,24 @@ public class PuzzleController : MonoBehaviour
         }
     }
 
+    public void PuzzleFinished()
+    {
+        puzzleFinished = true;
+
+        foreach (PressurePlate plate in pressurePlates)
+        {
+            plate.PuzzleFinished();
+            plate.locked = true;
+        }
+
+    }
+
     public void ResetCharacters()
     {
         inputOrder = "";
 
 
-        pressurePlates = GetComponentsInChildren<PressurePlate>();
+       // pressurePlates = GetComponentsInChildren<PressurePlate>();
 
 
         foreach (PressurePlate plate in pressurePlates)
