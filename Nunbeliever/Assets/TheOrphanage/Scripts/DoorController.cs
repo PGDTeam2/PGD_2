@@ -6,6 +6,7 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] private float autoCloseTime;
     [SerializeField] internal bool IsLocked;
+    [SerializeField] private bool isBlocked;
 
     private bool m_isOpen;
     private bool m_openedByNun;
@@ -57,6 +58,9 @@ public class DoorController : MonoBehaviour
 
     public void OnInteract(bool hasKey)
     {
+        if (isBlocked)
+            return;
+
         // Only require key if door is locked
         if (hasKey || !IsLocked)
             ToggleDoor();

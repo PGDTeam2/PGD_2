@@ -279,6 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoCloseTime: 5
+  IsLocked: 0
+  isBlocked: 0
 --- !u!95 &1921851385414368823
 Animator:
   serializedVersion: 4
@@ -415,7 +417,7 @@ GameObject:
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4712692843169828
 Transform:
