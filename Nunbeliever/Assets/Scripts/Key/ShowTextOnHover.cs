@@ -9,6 +9,7 @@ public class ShowTextOnHover : MonoBehaviour
 
     private void Awake()
     {
+        // this gameobject > Canvas > TextMeshPro text
         m_animator = GetComponent<Animator>();
     }
 
