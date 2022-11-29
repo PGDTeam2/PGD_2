@@ -15763,7 +15763,7 @@ GameObject:
   - component: {fileID: 1749141742}
   - component: {fileID: 1749141743}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: KeyHolder
   m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
