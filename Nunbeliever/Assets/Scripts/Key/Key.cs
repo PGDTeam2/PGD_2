@@ -14,6 +14,7 @@ public class Key : MonoBehaviour
 
     public void OnHoverChanged(bool isHovering)
     {
+        // Set the animator to change the text
         m_animator.SetBool("is_visible", isHovering);
     }
 }

@@ -16,7 +16,7 @@ public class KeyPickup : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Key"))
             {
-                Debug.Log(hitInfo.distance);
+                // Send OnHoverChanged only when changed :)
                 if (!m_isHovering)
                 {
                     m_lastHover = hitInfo.collider.gameObject;
@@ -24,6 +24,7 @@ public class KeyPickup : MonoBehaviour
                     m_lastHover.SendMessage("OnHoverChanged", m_isHovering);
                 }
 
+                // Pickup key when pressing E
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     m_hasKey = true;
@@ -32,8 +33,11 @@ public class KeyPickup : MonoBehaviour
                 return;
             }
         }
+
+        // Make sure we have hovered over the key before
         if (m_lastHover != null)
         {
+            // Send OnHoverChanged only when changed :)
             if (m_isHovering)
             {
                 m_isHovering = false;
