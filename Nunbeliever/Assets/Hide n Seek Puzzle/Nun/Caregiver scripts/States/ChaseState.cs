@@ -23,11 +23,13 @@ public class ChaseState : State
 
         if (sM.playerCaught)
         {
+            sM.fov = 90;
             machine.changeState(sM.catchState);
             return;
         }
         if (!sM.FindPlayer())
         {
+            sM.fov = 90;
             machine.changeState(sM.searchState);
         }
         
