@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class LookAtInterect : MonoBehaviour
 {
-    RaycastHit hit;
     [SerializeField]
-    private Transform camera;
+    private GameObject cam;
     [SerializeField]
     private int range = 3;
     
-    public virtual void Interact()
+    private void Update()
     {
-        if (Physics.Raycast(camera.position,camera.forward, out hit, range))
+        print(cam.transform.position);
+
+        Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.yellow);
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            PressButton pressButton = hit.collider.GetComponent<PressButton>();
-            if (pressButton != null)
+            RaycastHit hit;
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
             {
-                pressButton.Press();
+                print(hit.collider.gameObject);
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
             }
         }
     }
