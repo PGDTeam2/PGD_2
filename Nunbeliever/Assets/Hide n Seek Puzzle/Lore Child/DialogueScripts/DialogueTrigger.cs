@@ -22,8 +22,8 @@ public class DialogueTrigger : MonoBehaviour
         if (!alreadyTriggered)
         {
             player.canMove = false;
-
             TriggerDialogue();
+            animator.SetTrigger("Talk");
             alreadyTriggered = true;
         }
     }
@@ -33,6 +33,8 @@ public class DialogueTrigger : MonoBehaviour
         if (dialogueManager.walkBack)
         {
             animator.SetBool("walkBack",true);
+            animator.ResetTrigger("Talk");
+
             transform.position = Vector3.MoveTowards(transform.position, backPoint.transform.position, 0.01f);
             Vector3 direction = (backPoint.transform.position-transform.position).normalized;
             transform.rotation = Quaternion.LookRotation(direction);

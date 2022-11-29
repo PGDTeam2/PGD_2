@@ -41,8 +41,8 @@ public class TPToOutside : MonoBehaviour
         m_player.transform.rotation = m_spawnPoint.transform.rotation;
 
         // Switch lighting and scene
-        m_outsideLight.GetComponent<Light>().enabled = true;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Demo"));
+        m_outsideLight.GetComponent<Light>().enabled = true;
 
         yield return new WaitForSeconds(0.1f);
 
@@ -60,7 +60,18 @@ public class TPToOutside : MonoBehaviour
     }
     IEnumerator wakeUp()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
+        var image = m_whiteOutPanel.GetComponent<Image>();
+
+        // Fade in white screen
+        float t = 0;
+        while (t < 1f)
+        {
+            t += 0.1f;
+            image.color = new Color(0f, 0f, 0f, t);
+            yield return null;
+        }
+        if(t > 1f)
         SceneManager.LoadSceneAsync("Nun");
     }
 }
