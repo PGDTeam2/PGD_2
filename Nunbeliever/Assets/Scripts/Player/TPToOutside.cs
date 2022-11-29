@@ -19,11 +19,11 @@ public class TPToOutside : MonoBehaviour
             whiteOutPanel = GameObject.FindWithTag("WhiteOutPanel");
             outsideLight = GameObject.FindWithTag("OutsideLight");
             player = other.gameObject;
-            StartCoroutine(DoTransition());
+            StartCoroutine(DoTransition("Demo", 0.1f));
         }
     }
 
-    IEnumerator DoTransition()
+    IEnumerator DoTransition(string sceneName, float waitTime)
     {
         var image = whiteOutPanel.GetComponent<Image>();
         float t = 0;
@@ -36,8 +36,8 @@ public class TPToOutside : MonoBehaviour
         player.transform.position = spawnPoint.transform.position;
         player.transform.rotation = spawnPoint.transform.rotation;
         outsideLight.GetComponent<Light>().enabled = true;
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Demo"));
-        yield return new WaitForSeconds(0.1f);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+        yield return new WaitForSeconds(waitTime);
         while (t > 0f)
         {
             t -= 0.01f;
