@@ -21,6 +21,7 @@ public class PressurePlate : MonoBehaviour
         multiUse = puzzleController.multipleUsePlates;
     }
 
+    //De knop aanzetten als er objecten op staan
     private void OnTriggerEnter(Collider other)
     {
         thingsOnPlate++;
@@ -34,12 +35,12 @@ public class PressurePlate : MonoBehaviour
 
             if (puzzleController.orderPuzzle)
             {
-                //Debug.Log(puzzleInput);
                 puzzleController.AddCharacter(puzzleInput);
             }
         }
     }
 
+    //De knop uitzetten als er niks meer op staat
     private void OnTriggerExit(Collider other)
     {
         thingsOnPlate--;
@@ -57,6 +58,7 @@ public class PressurePlate : MonoBehaviour
         }
     }
 
+    //Reset de knop
     public void ResetButton()
     {
         if(pressed) puzzleController.activatedPuzzlePieces--;
@@ -66,6 +68,7 @@ public class PressurePlate : MonoBehaviour
         GetComponentsInChildren<ParticleSystem>()[2].Play();
     }
 
+    //Particles als de bijbehorende puzzel klaar is
     public void PuzzleFinished()
     {
         GetComponentsInChildren<ParticleSystem>()[1].Play();
