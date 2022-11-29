@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class ShowTextOnHover : MonoBehaviour
 {
     private Animator m_animator;
 
