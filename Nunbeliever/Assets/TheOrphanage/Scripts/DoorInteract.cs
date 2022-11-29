@@ -15,7 +15,7 @@ public class DoorInteract : MonoBehaviour
 
                 if (hitInfo.collider.CompareTag("Door"))
                 {
-                    hitInfo.collider.SendMessageUpwards("OnInteract");
+                    hitInfo.collider.SendMessageUpwards("OnInteract", GetComponent<KeyPickup>().HasKey);
                 }
             }
         }
