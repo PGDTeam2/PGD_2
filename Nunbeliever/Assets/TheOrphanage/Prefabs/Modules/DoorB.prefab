@@ -379,10 +379,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232365612599462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4798b52c7a646b9418757d2abe0d5b6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 789bb6e333ebba54f955aa9daf1eba87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 0
+  autoCloseTime: 5
 --- !u!1 &1557332828447914
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +400,7 @@ GameObject:
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4784329058011126
 Transform:
