@@ -47,8 +47,6 @@ public class HideMechanic : MonoBehaviour
                 hidingSpot = hit.transform.gameObject; // hidingspot are the objects that are hit bij the raycast 
                 if (Input.GetKeyDown(KeyCode.E)) // pressing E disables the main camera
                 {
-                    mainCamera.enabled = false;
-                    
 
                     if (hidingSpot != null)
                     {
@@ -56,6 +54,7 @@ public class HideMechanic : MonoBehaviour
 
                         if (cam != null) // enabling the hiding cam.
                         {
+                            mainCamera.enabled = false;
                             cam.enabled = true;
                             hiding = true;
                         }
