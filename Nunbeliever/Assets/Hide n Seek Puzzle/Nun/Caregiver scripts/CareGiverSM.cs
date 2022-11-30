@@ -91,8 +91,11 @@ public class CareGiverSM : StateMachine
         {
             agent.destination = playerSpawnPoint.transform.position;
 
-            //moves the player with the agents so the agent automatically creates the path for both objects
+            transform.rotation = Quaternion.RotateTowards(carry.transform.rotation, transform.rotation, 90);
+
             playerController.canMove = false;
+
+            //moves the player with the agents so the agent automatically creates the path for both objects
             player.transform.position = carry.transform.position;
             return true;
         }
