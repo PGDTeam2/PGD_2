@@ -46,7 +46,7 @@ public class HideMechanic : MonoBehaviour
                 {
                     cam = hidingSpot.GetComponentInChildren<Camera>();
 
-                    if(cam != null)
+                    if (cam != null)
                     {
                         mainCamera.enabled = false;
                         cam.enabled = true;
