@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class HideMechanic : MonoBehaviour
@@ -18,6 +19,8 @@ public class HideMechanic : MonoBehaviour
     float rotationY = 0;    
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+
+    private bool m_isHovering;
     
 
     PlayerController playerController;
@@ -34,26 +37,47 @@ public class HideMechanic : MonoBehaviour
 
     public void ChechForColliders()
     {
-        LayerMask mask = LayerMask.GetMask("Hiding");
+        LayerMask mask = LayerMask.GetMask("Hiding"); 
         RaycastHit hit;
 
         if (Camera.main != null)
         {
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range, mask) && Input.GetKeyDown(KeyCode.E))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range, mask)) 
             {
-                hidingSpot = hit.transform.gameObject;
-                if (hidingSpot != null)
+                hidingSpot = hit.transform.gameObject; // hidingspot are the objects that are hit bij the raycast 
+                if (Input.GetKeyDown(KeyCode.E)) // pressing E disables the main camera
                 {
-                    cam = hidingSpot.GetComponentInChildren<Camera>();
+                    mainCamera.enabled = false;
+                    
 
-                    if (cam != null)
+                    if (hidingSpot != null)
                     {
-                        mainCamera.enabled = false;
-                        cam.enabled = true;
-                        hiding = true;
+                        cam = hidingSpot.GetComponentInChildren<Camera>(); // setting cam variable to the hiding camera.
+
+                        if (cam != null) // enabling the hiding cam.
+                        {
+                            cam.enabled = true;
+                            hiding = true;
+                        }
                     }
                 }
+
+                if (!m_isHovering) 
+                {
+                    m_isHovering = true;
+                    hidingSpot.SendMessageUpwards("OnHoverChanged", m_isHovering);
+                } 
             }
+
+            else
+            {
+                if (m_isHovering)
+                {
+                    m_isHovering = false;
+                    hidingSpot.SendMessageUpwards("OnHoverChanged", m_isHovering);
+                }
+            }
+
             hiding = false;
         }
         else if (Input.GetKeyDown(KeyCode.E) && Camera.main == null)
@@ -61,6 +85,7 @@ public class HideMechanic : MonoBehaviour
             cam.enabled = false;
             mainCamera.enabled = true;
             hiding = false;
+
         }
         else if (Camera.main == null)
         {
