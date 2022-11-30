@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 6955764207865991739}
   - component: {fileID: 6955764207865991732}
   - component: {fileID: 9016606120224537334}
-  - component: {fileID: 8633967550229497826}
   m_Layer: 7
   m_Name: Player
-  m_TagString: player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,19 +107,6 @@ MonoBehaviour:
   mouseSense: 5
   lookSpeed: 2
   lookXLimit: 45
---- !u!114 &8633967550229497826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6955764207865991737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d340bebf2d4f6ed4abdf219164bd6108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 2
 --- !u!1 &6955764209410838114
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,8 +119,10 @@ GameObject:
   - component: {fileID: 6955764209410838141}
   - component: {fileID: 6955764209410838140}
   - component: {fileID: 6955764209410838142}
+  - component: {fileID: 8411771694899225246}
   - component: {fileID: 6357878732204822733}
   - component: {fileID: 4599183043191692886}
+  - component: {fileID: 902872091}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -180,9 +168,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 73.4
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -223,6 +211,19 @@ MonoBehaviour:
   walkingBobbingSpeed: 13
   bobbingAmount: 0.05
   controller: {fileID: 6955764207865991739}
+--- !u!114 &8411771694899225246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955764209410838114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d340bebf2d4f6ed4abdf219164bd6108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
 --- !u!114 &6357878732204822733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,3 +301,15 @@ MonoBehaviour:
   blendDistance: 10
   weight: 1
   priority: 1
+--- !u!114 &902872091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955764209410838114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe57cbae2dbcd8a47ba049b7472e2609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

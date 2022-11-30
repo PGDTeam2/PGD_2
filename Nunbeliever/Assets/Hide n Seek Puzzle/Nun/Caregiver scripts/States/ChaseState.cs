@@ -27,7 +27,7 @@ public class ChaseState : State
             machine.changeState(sM.catchState);
             return;
         }
-        if (!sM.FindPlayer())
+       else if (!sM.FindPlayer())
         {
             sM.fov = 90;
             machine.changeState(sM.searchState);

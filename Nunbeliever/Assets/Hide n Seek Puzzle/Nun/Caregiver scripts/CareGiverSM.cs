@@ -13,19 +13,19 @@ public class CareGiverSM : StateMachine
 
     [Header("Pathfinding")]
     [SerializeField] internal Transform[] waypointList;
+    [SerializeField] internal Transform nextWaypoint;
     [SerializeField] internal int currentWaypoint = 0;
-
     [SerializeField] internal bool reachedWaypoint;
     [SerializeField] internal NavMeshAgent agent;
-    [SerializeField] internal Transform nextWaypoint;
 
     [Header("Catching the player")]
     [SerializeField] public GameObject player;
-    [SerializeField] internal float fov = 90;
-    [SerializeField] private float grabLength = 1f;
     [SerializeField] private Transform playerSpawnPoint;
     [SerializeField] private Transform carry;
-    
+    [SerializeField] internal float fov = 90;
+    [SerializeField] private float grabLength = 1f;
+    [SerializeField] private PlayerController playerController;
+ 
 
     internal bool playerCaught;
     internal bool playerSeen;
@@ -55,8 +55,6 @@ public class CareGiverSM : StateMachine
         //Moving towards the destination
         agent.destination = waypointList[currentWaypoint].transform.position;
 
-
-
         if (nextWaypoint == null)
         {
             nextWaypoint = waypointList[currentWaypoint];
@@ -84,7 +82,7 @@ public class CareGiverSM : StateMachine
         }
     }
 
-    
+
     internal bool bringingPlayerBackToSpawn()
     {
         //when the agent isn't located on the spawnpoint move towards the spawnpoint
@@ -94,11 +92,13 @@ public class CareGiverSM : StateMachine
             agent.destination = playerSpawnPoint.transform.position;
 
             //moves the player with the agents so the agent automatically creates the path for both objects
+            playerController.canMove = false;
             player.transform.position = carry.transform.position;
             return true;
         }
         else
         {
+            playerController.canMove = true;
             StartCoroutine(goBackToPatrol());
             return false;
         }

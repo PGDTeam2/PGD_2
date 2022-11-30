@@ -43,10 +43,18 @@ public class HideMechanic : MonoBehaviour
             {
                 mainCamera.enabled = false;
                 hidingSpot = hit.transform.gameObject;
-                cam = hidingSpot.GetComponentInChildren<Camera>();
-                cam.enabled = true;
-                hiding = true;
+                if (hidingSpot != null)
+                {
+                    cam = hidingSpot.GetComponentInChildren<Camera>();
+
+                    if(cam != null)
+                    {
+                        cam.enabled = true;
+                        hiding = true;
+                    }
+                }
             }
+            hiding = false;
         }
         else if (Input.GetKeyDown(KeyCode.E) && Camera.main == null)
         {

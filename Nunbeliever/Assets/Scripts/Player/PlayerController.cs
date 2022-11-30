@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public float Stamina = 100f;
     public float maxStamina = 100f;
-   
+
     CharacterController characterController;
 
     float rotationX = 0;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 144;
     }
- 
+
     void Update()
     {
         if (!HideMechanic.hiding) { Movement(); }
@@ -80,11 +80,6 @@ public class PlayerController : MonoBehaviour
         moveDirection.y = movementDirectionY;
 
 
-        //gravity for falling
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
@@ -92,6 +87,12 @@ public class PlayerController : MonoBehaviour
         // Player and Camera rotation
         if (canMove)
         {
+            //gravity for falling
+            if (!characterController.isGrounded)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0); // up down
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
             Stamina += maxStamina / 100;
             yield return new WaitForSeconds(0.1f);
         }
-        
+
     }
 
 }
