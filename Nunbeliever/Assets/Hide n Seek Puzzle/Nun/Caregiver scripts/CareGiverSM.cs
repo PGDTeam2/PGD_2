@@ -91,7 +91,7 @@ public class CareGiverSM : StateMachine
         {
             agent.destination = playerSpawnPoint.transform.position;
 
-            transform.rotation = Quaternion.RotateTowards(carry.transform.rotation, transform.rotation, 90);
+            transform.rotation = Quaternion.RotateTowards(carry.transform.rotation, transform.rotation, 180);
 
             playerController.canMove = false;
 
