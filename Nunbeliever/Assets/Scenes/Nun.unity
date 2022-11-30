@@ -1001,6 +1001,34 @@ PrefabInstance:
       propertyPath: waypointList.Array.data[4]
       value: 
       objectReference: {fileID: 1165095068}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1215427841}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: playerSpawnPoint
+      value: 
+      objectReference: {fileID: 946961825}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: waypointList.Array.data[0]
+      value: 
+      objectReference: {fileID: 438655931}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: waypointList.Array.data[1]
+      value: 
+      objectReference: {fileID: 649564240}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: waypointList.Array.data[2]
+      value: 
+      objectReference: {fileID: 345820066}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: waypointList.Array.data[3]
+      value: 
+      objectReference: {fileID: 924055058}
+    - target: {fileID: 3765791909827503130, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: waypointList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1165095068}
     - target: {fileID: 8075931413453128772, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
       propertyPath: m_Name
       value: CareGiver(hide and seek)
