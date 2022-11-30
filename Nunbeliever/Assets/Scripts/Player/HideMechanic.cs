@@ -41,7 +41,6 @@ public class HideMechanic : MonoBehaviour
         {
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, range, mask) && Input.GetKeyDown(KeyCode.E))
             {
-                mainCamera.enabled = false;
                 hidingSpot = hit.transform.gameObject;
                 if (hidingSpot != null)
                 {
@@ -49,6 +48,7 @@ public class HideMechanic : MonoBehaviour
 
                     if(cam != null)
                     {
+                        mainCamera.enabled = false;
                         cam.enabled = true;
                         hiding = true;
                     }
