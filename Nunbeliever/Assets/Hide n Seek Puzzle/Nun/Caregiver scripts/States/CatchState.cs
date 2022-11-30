@@ -16,7 +16,8 @@ public class CatchState : State
     public override void Update()
     {
         base.Update();
-        sM.setAnimation(2);
+
+        sM.setAnimation(2); //grab animation
         sM.bringingPlayerBackToSpawn();
 
         if (!sM.playerCaught)

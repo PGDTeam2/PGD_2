@@ -17,8 +17,8 @@ public class SearchState : State
     {
         
         base.Update();
-        sM.setAnimation(0);
 
+        sM.setAnimation(0);
         sM.Patrol();
         sM.FindPlayer();
 
