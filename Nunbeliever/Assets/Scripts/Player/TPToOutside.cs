@@ -11,6 +11,12 @@ public class TPToOutside : MonoBehaviour
     private GameObject m_outsideLight;
     private GameObject m_player;
 
+    private void Awake()
+    {
+        if (!SceneManager.GetSceneByName("Demo").isLoaded)
+            SceneManager.LoadSceneAsync("Demo", LoadSceneMode.Additive);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("player"))
