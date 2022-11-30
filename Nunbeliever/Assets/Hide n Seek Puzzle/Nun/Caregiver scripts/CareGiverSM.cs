@@ -90,13 +90,10 @@ public class CareGiverSM : StateMachine
             transform.position.z != playerSpawnPoint.transform.position.z)
         {
             agent.destination = playerSpawnPoint.transform.position;
-
-            transform.rotation = Quaternion.RotateTowards(carry.transform.rotation, transform.rotation, 180);
-
-            playerController.canMove = false;
-
+            playerController.canMove = false;   
+            
             //moves the player with the agents so the agent automatically creates the path for both objects
-            player.transform.position = carry.transform.position;
+            player.transform.SetPositionAndRotation(carry.transform.position, carry.transform.rotation);
             return true;
         }
         else
