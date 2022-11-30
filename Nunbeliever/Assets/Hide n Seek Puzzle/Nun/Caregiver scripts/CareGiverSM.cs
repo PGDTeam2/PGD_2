@@ -20,7 +20,6 @@ public class CareGiverSM : StateMachine
 
     [Header("Catching the player")]
     [SerializeField] private PlayerController playerController;
-    [SerializeField] public GameObject player;
     [SerializeField] private Transform playerSpawnPoint; //transform position where the player gets put back
     [SerializeField] private Transform carry; //transform where the player positions when caught
     [SerializeField] private float grabLength = 1f;
@@ -90,10 +89,10 @@ public class CareGiverSM : StateMachine
             transform.position.z != playerSpawnPoint.transform.position.z)
         {
             agent.destination = playerSpawnPoint.transform.position;
-            playerController.canMove = false;   
-            
+            playerController.canMove = false;
+
             //moves the player with the agents so the agent automatically creates the path for both objects
-            player.transform.SetPositionAndRotation(carry.transform.position, carry.transform.rotation);
+            playerController.transform.SetPositionAndRotation(carry.transform.position, carry.transform.rotation);
             return true;
         }
         else
@@ -106,7 +105,7 @@ public class CareGiverSM : StateMachine
     }
     internal void followPlayer()
     {
-        agent.destination = player.transform.position;
+        agent.destination = playerController.transform.position;
     }
 
     internal IEnumerator goBackToPatrol()
@@ -120,12 +119,12 @@ public class CareGiverSM : StateMachine
 
     internal bool FindPlayer()
     {
-        var distance = player.transform.position - transform.position;
+        var distance = playerController.transform.position - transform.position;
 
         //Calculates the angle from which the agent can see the player
         if (Vector3.Angle(transform.forward, distance.normalized) < fov / 2)
         {
-            float length = (player.transform.position - transform.position).magnitude;
+            float length = (playerController.transform.position - transform.position).magnitude;
             //Calculates the agents raycast
             if (Physics.Raycast(transform.position, distance.normalized, out RaycastHit hitInfo, length + 1))
             {
