@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 4686748342969852}
   - component: {fileID: 5046962793131320898}
   - component: {fileID: 2030194716190938846}
+  - component: {fileID: 5348841312653643488}
   m_Layer: 0
   m_Name: DoorA
   m_TagString: Untagged
@@ -146,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoCloseTime: 5
+  IsLocked: 0
+  isBlocked: 0
 --- !u!95 &2030194716190938846
 Animator:
   serializedVersion: 4
@@ -166,6 +169,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5348841312653643488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887655192220338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: -1, y: -0.4, z: 0}
 --- !u!1 &1931984401864324
 GameObject:
   m_ObjectHideFlags: 0
