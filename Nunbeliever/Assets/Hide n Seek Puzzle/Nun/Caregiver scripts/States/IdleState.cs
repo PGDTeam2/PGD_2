@@ -7,7 +7,7 @@ public class IdleState : State
 {
     private CareGiverSM sM;
     
-    public IdleState(CareGiverSM machine) : base("IdleState", machine)
+    public IdleState(CareGiverSM machine) : base(machine)
     {
         sM = (CareGiverSM)this.machine;   
     }

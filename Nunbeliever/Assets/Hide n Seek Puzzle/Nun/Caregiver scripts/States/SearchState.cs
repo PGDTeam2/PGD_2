@@ -5,7 +5,7 @@ using UnityEngine;
 public class SearchState : State
 {
     private CareGiverSM sM;
-    public SearchState(CareGiverSM machine) : base("SearchState", machine)
+    public SearchState(CareGiverSM machine) : base(machine)
     {
         sM = (CareGiverSM)this.machine;
     }
@@ -17,8 +17,8 @@ public class SearchState : State
     {
         
         base.Update();
-        sM.setAnimation(0);
 
+        sM.setAnimation(0);
         sM.Patrol();
         sM.FindPlayer();
 
