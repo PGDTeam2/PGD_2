@@ -6,7 +6,7 @@ public class ChaseState : State
 {
     // Start is called before the first frame update
     private CareGiverSM sM;
-    public ChaseState(CareGiverSM stateMachine) : base("ChaseState", stateMachine)
+    public ChaseState(CareGiverSM stateMachine) : base(stateMachine)
     {
         sM = (CareGiverSM)this.machine;
     }

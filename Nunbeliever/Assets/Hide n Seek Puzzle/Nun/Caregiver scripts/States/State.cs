@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class State
 {
-    public string name;
+    
     protected StateMachine machine;
-    public State(string name, StateMachine machine)
+    public State(StateMachine machine)
     {
-        this.name = name;
+        
         this.machine = machine;
     }
 

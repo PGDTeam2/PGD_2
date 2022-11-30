@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatchState : State
 {
     private CareGiverSM sM;
-    public CatchState(CareGiverSM stateMachine) : base("CatchState", stateMachine)
+    public CatchState(CareGiverSM stateMachine) : base(stateMachine)
     {
         sM = (CareGiverSM)this.machine;
     }
