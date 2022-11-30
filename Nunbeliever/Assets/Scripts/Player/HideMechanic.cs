@@ -74,7 +74,7 @@ public class HideMechanic : MonoBehaviour
                 if (m_isHovering)
                 {
                     m_isHovering = false;
-                    hidingSpot.SendMessage("OnHoverChanged", m_isHovering);
+                    hidingSpot.SendMessageUpwards("OnHoverChanged", m_isHovering);
                 }
             }
 
