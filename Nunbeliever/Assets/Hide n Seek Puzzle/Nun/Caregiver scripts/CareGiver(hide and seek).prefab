@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &261702775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261702776}
+  m_Layer: 0
+  m_Name: Carry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &261702776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261702775}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8888039104474423038}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &40804803534055313
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,12 +2416,11 @@ GameObject:
   - component: {fileID: 8994270117351997024}
   - component: {fileID: 8075931413453128770}
   - component: {fileID: 8075931413453128769}
-  - component: {fileID: 8075931413453128771}
   - component: {fileID: 8075931413453128768}
-  - component: {fileID: 8075931413453128783}
+  - component: {fileID: 552377750}
   m_Layer: 0
   m_Name: CareGiver(hide and seek)
-  m_TagString: Untagged
+  m_TagString: Nun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2415,6 +2445,7 @@ Transform:
   - {fileID: 3965695128138743402}
   - {fileID: 7927604740988398189}
   - {fileID: 1382233406246916863}
+  - {fileID: 261702776}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2464,28 +2495,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3008852
-  m_Height: 1.7467129
+  m_Radius: 0.2824004
+  m_Height: 1.8581239
   m_Direction: 1
-  m_Center: {x: 0, y: 0.88, z: 0}
---- !u!114 &8075931413453128771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8075931413453128772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ede01c02699a1498dcd50f566076c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypointList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentWaypoint: 0
-  speed: 3
+  m_Center: {x: 0, y: 0.8242945, z: 0}
 --- !u!195 &8075931413453128768
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2508,7 +2521,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8075931413453128783
+--- !u!114 &552377750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2517,13 +2530,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 8075931413453128772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b02a56b93e2a39438d72bf5a0a714a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c77f7c2889648f468e094a510fc26a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerController: {fileID: 0}
   player: {fileID: 0}
-  fov: 90
-  grabLength: 0.4
   playerSpawnPoint: {fileID: 0}
+  carry: {fileID: 261702776}
+  grabLength: 1
+  fov: 90
 --- !u!1 &8267623742012641376
 GameObject:
   m_ObjectHideFlags: 0
