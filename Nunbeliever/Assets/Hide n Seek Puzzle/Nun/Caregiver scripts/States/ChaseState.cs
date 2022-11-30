@@ -6,9 +6,11 @@ public class ChaseState : State
 {
     // Start is called before the first frame update
     private CareGiverSM sM;
+    private GameObject player;
     public ChaseState(CareGiverSM stateMachine) : base(stateMachine)
     {
         sM = (CareGiverSM)this.machine;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     public override void Enter()
     {
@@ -18,7 +20,7 @@ public class ChaseState : State
     {
         base.Update();
 
-        sM.followPlayer();
+        followPlayer();
         sM.FindPlayer();
 
         if (sM.playerCaught)
@@ -33,6 +35,10 @@ public class ChaseState : State
             machine.changeState(sM.searchState);
         }
         
+    }
+    internal void followPlayer()
+    {
+        sM.agent.destination = player.transform.position;
     }
     public override void Exit()
     {

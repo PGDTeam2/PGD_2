@@ -10,18 +10,10 @@ public class CareGiverSM : StateMachine
     [HideInInspector] public SearchState searchState;
     [HideInInspector] public ChaseState chaseState;
     [HideInInspector] public CatchState catchState;
-
-    [Header("Pathfinding")]
-    [HideInInspector] internal int currentWaypoint = 0;
-    [HideInInspector] internal bool reachedWaypoint;
-    [HideInInspector] internal Transform nextWaypoint;
     [HideInInspector] internal NavMeshAgent agent;
-    [SerializeField] internal Transform[] waypointList; //assign the waypoints in the inspector
 
     [Header("Catching the player")]
-    [SerializeField] private PlayerController playerController;
-    [SerializeField] private Transform playerSpawnPoint; //transform position where the player gets put back
-    [SerializeField] private Transform carry; //transform where the player positions when caught
+    [SerializeField] internal PlayerController playerController;
     [SerializeField] private float grabLength = 1f;
     [SerializeField] internal float fov = 90;
  
@@ -40,6 +32,7 @@ public class CareGiverSM : StateMachine
     }
     void Start()
     {
+        
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         setState(idleState);
@@ -48,65 +41,7 @@ public class CareGiverSM : StateMachine
     {
         animator.SetInteger("animation", animationState);
     }
-    internal void Patrol()
-    {
-        //Moving towards the destination
-        agent.destination = waypointList[currentWaypoint].transform.position;
 
-        //assigns the first waypoint.
-        if (nextWaypoint == null)
-        {
-            nextWaypoint = waypointList[currentWaypoint];
-        }
-
-        //When the agent reaches the waypoint it will move on to the next
-        if (transform.position.x == waypointList[currentWaypoint].transform.position.x &&
-           transform.position.z == waypointList[currentWaypoint].transform.position.z)
-        {
-            Vector3 direction = (waypointList[currentWaypoint].transform.position - transform.position).normalized;
-            transform.rotation = Quaternion.LookRotation(direction);
-
-            if (currentWaypoint < waypointList.Length - 1)
-            {
-                currentWaypoint++;
-                nextWaypoint = waypointList[currentWaypoint];
-            }
-            else
-            {
-                currentWaypoint = 0;
-                nextWaypoint = null;
-            }
-            reachedWaypoint = true;
-
-        }
-    }
-
-
-    internal bool bringingPlayerBackToSpawn()
-    {
-        //when the agent isn't located on the spawnpoint move towards the spawnpoint
-        if (transform.position.x != playerSpawnPoint.transform.position.x &&
-            transform.position.z != playerSpawnPoint.transform.position.z)
-        {
-            agent.destination = playerSpawnPoint.transform.position;
-            playerController.canMove = false;
-
-            //moves the player with the agents so the agent automatically creates the path for both objects
-            playerController.transform.SetPositionAndRotation(carry.transform.position, carry.transform.rotation);
-            return true;
-        }
-        else
-        {
-            playerController.canMove = true;
-            StartCoroutine(goBackToPatrol());
-            return false;
-        }
-
-    }
-    internal void followPlayer()
-    {
-        agent.destination = playerController.transform.position;
-    }
 
     internal IEnumerator goBackToPatrol()
     {
