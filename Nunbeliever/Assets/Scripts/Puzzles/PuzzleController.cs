@@ -29,10 +29,9 @@ public class PuzzleController : MonoBehaviour
     private void Awake()
     {
         pressurePlates = GetComponentsInChildren<PressurePlate>();
-
-        //Debug.Log(pressurePlates.Length);
     }
 
+    //Win conditions van alle varianten van de puzzle.
     private void Update()
     {
         if(puzzleComplete && platesStayOn && !puzzleFinished)
@@ -42,7 +41,6 @@ public class PuzzleController : MonoBehaviour
 
         if (activatedPuzzlePieces >= puzzlePiecesNeeded && !puzzleComplete)
         {
-            //Debug.Log(inputOrder);
             if (orderPuzzle)
             {
                 if (inputOrder == correctOrder)
@@ -66,18 +64,20 @@ public class PuzzleController : MonoBehaviour
         }
 
 
-        //Testing only
+        //Testing only, vervang dit door een daadwerkelijke deur ofzo
         if (puzzleComplete)
         {
             puzzleResult.transform.rotation = Quaternion.LookRotation(new Vector3(Random.Range(0, 2), 0, 0), new Vector3(0, 1, 0));
         }
     }
 
+    //Voegt letter toe
     public void AddCharacter(char input)
     {
         inputOrder += input;
     }
 
+    //Verwijdert de bijbehorende letter
     public void RemoveCharacter(char input)
     {
         for (int i = 0; i < inputOrder.Length; i++)
@@ -89,6 +89,7 @@ public class PuzzleController : MonoBehaviour
         }
     }
 
+    //Gaat aan als een "permanente puzzel" klaar is
     public void PuzzleFinished()
     {
         puzzleFinished = true;
@@ -101,19 +102,15 @@ public class PuzzleController : MonoBehaviour
 
     }
 
+    //Reset de letters bij een verkeerd woord
     public void ResetCharacters()
     {
         inputOrder = "";
-
-
-       // pressurePlates = GetComponentsInChildren<PressurePlate>();
-
 
         foreach (PressurePlate plate in pressurePlates)
         {
             plate.ResetButton();
         }
     }
-
 
 }
