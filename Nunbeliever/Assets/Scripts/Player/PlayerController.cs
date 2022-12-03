@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!HideMechanic.hiding) { Movement(); }
+        Movement();
     }
     void Movement()
     {
@@ -82,7 +82,8 @@ public class PlayerController : MonoBehaviour
 
 
         // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
+        if (characterController.enabled)
+            characterController.Move(moveDirection * Time.deltaTime);
 
         // Player and Camera rotation
         if (canMove)

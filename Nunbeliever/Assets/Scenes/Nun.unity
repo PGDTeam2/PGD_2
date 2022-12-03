@@ -1061,6 +1061,10 @@ PrefabInstance:
       propertyPath: waypointList.Array.data[4]
       value: 
       objectReference: {fileID: 1165095068}
+    - target: {fileID: 4072289922161828105, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8075931413453128772, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
       propertyPath: m_Name
       value: CareGiver(hide and seek)

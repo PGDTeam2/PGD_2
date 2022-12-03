@@ -30,6 +30,8 @@ public class HideMechanic : MonoBehaviour
     private void Update()
     {
         ChechForColliders();
+        if (hiding)
+            playerController.canMove = false;
     }
 
     public void ChechForColliders()
@@ -62,9 +64,9 @@ public class HideMechanic : MonoBehaviour
                 {
                     m_isHovering = true;
                     hidingSpot.SendMessageUpwards("OnHoverChanged", m_isHovering);
-                } 
+                }
+                return;
             }
-
             else
             {
                 if (m_isHovering)
@@ -81,6 +83,7 @@ public class HideMechanic : MonoBehaviour
             cam.enabled = false;
             mainCamera.enabled = true;
             hiding = false;
+            playerController.canMove = true;
 
         }
         else if (Camera.main == null)
