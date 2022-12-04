@@ -30,6 +30,8 @@ public class HideMechanic : MonoBehaviour
     private void Update()
     {
         ChechForColliders();
+        if(hiding) playerController.canMove = false;
+        
     }
 
     public void ChechForColliders()
