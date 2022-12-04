@@ -2520,7 +2520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046962793131320898, guid: 53ff73dec63847d4eb3a215cd03b00a0, type: 3}
       propertyPath: autoCloseTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5348841312653643488, guid: 53ff73dec63847d4eb3a215cd03b00a0, type: 3}
       propertyPath: m_Size.z
@@ -5113,7 +5113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046962793131320898, guid: 53ff73dec63847d4eb3a215cd03b00a0, type: 3}
       propertyPath: autoCloseTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5348841312653643488, guid: 53ff73dec63847d4eb3a215cd03b00a0, type: 3}
       propertyPath: m_Size.z
@@ -5729,8 +5729,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: -1, y: -0.4, z: 0}
+  m_Size: {x: 2, y: 1, z: 3}
+  m_Center: {x: -1, y: -0.4, z: 1}
 --- !u!114 &8473097180108395851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5743,7 +5743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789bb6e333ebba54f955aa9daf1eba87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoCloseTime: 2
+  autoCloseTime: 3
   IsLocked: 0
   isBlocked: 0
 --- !u!4 &8473713613248417432 stripped
@@ -7379,7 +7379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046962793131320898, guid: 53ff73dec63847d4eb3a215cd03b00a0, type: 3}
       propertyPath: autoCloseTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5348841312653643488, guid: 53ff73dec63847d4eb3a215cd03b00a0, type: 3}
       propertyPath: m_Size.z
@@ -9234,8 +9234,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: -1, y: -0.4, z: 0}
+  m_Size: {x: 2, y: 1, z: 5}
+  m_Center: {x: -1, y: -0.4, z: 0.5}
 --- !u!114 &8473097180372691833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9248,7 +9248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789bb6e333ebba54f955aa9daf1eba87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoCloseTime: 2
+  autoCloseTime: 3
   IsLocked: 0
   isBlocked: 0
 --- !u!1001 &8473097180349767878
