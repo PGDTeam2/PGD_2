@@ -9,43 +9,51 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private Transform backPoint;
 
-    private bool alreadyTriggered = false;
     public Dialogue dialogue;
     private Animator animator;
 
     void Start()
     {
-    animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!alreadyTriggered)
+        if (!dialogueManager.alreadyTriggered)
         {
+
             player.canMove = false;
             TriggerDialogue();
             animator.SetTrigger("Talk");
-            alreadyTriggered = true;
+            dialogueManager.alreadyTriggered = true;
         }
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            dialogueManager.DisplayNextSentence();
+        }
+        
+    }
     private void Update()
     {
         if (dialogueManager.walkBack)
         {
-            animator.SetBool("walkBack",true);
+            animator.SetBool("walkBack", true);
             animator.ResetTrigger("Talk");
 
             transform.position = Vector3.MoveTowards(transform.position, backPoint.transform.position, 0.01f);
-            Vector3 direction = (backPoint.transform.position-transform.position).normalized;
+            Vector3 direction = (backPoint.transform.position - transform.position).normalized;
             transform.rotation = Quaternion.LookRotation(direction);
 
             player.canMove = true;
         }
 
         if (transform.position == backPoint.transform.position)
-        { 
+        {
             animator.SetBool("walkBack", false);
             dialogueManager.walkBack = false;
+            
         }
 
     }

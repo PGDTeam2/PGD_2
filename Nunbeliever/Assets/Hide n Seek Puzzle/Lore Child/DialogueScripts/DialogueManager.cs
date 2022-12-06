@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
 	public TextMeshProUGUI dialogueText;
 	public GameObject dialogueScreen;
 	internal bool walkBack;
-
+	internal bool alreadyTriggered = false;
 
 	private Queue<string> sentences;
 
@@ -23,11 +23,6 @@ public class DialogueManager : MonoBehaviour
 	}
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-			DisplayNextSentence();
-        }
         
     }
 
@@ -49,12 +44,13 @@ public class DialogueManager : MonoBehaviour
 
 	public void DisplayNextSentence()
 	{
+		dialogueScreen.SetActive(true);
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
 			return;
 		}
-
+		
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence));
@@ -66,7 +62,7 @@ public class DialogueManager : MonoBehaviour
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueText.text += letter;
-			yield return null;
+			yield return new WaitForSeconds(0.03f);
 		}
 	}
 
@@ -75,5 +71,9 @@ public class DialogueManager : MonoBehaviour
 		walkBack = true;
 		dialogueScreen.SetActive(false);
 	}
-
+	internal IEnumerator unloadSentence()
+	{
+		yield return new WaitForSeconds(2);
+		dialogueScreen.SetActive(false);
+	}
 }
