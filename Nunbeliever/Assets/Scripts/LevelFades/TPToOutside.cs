@@ -11,6 +11,7 @@ public class TPToOutside : MonoBehaviour
     [SerializeField] int r;
     [SerializeField] int g;
     [SerializeField] int b;
+    [Tooltip("Time to fade"), SerializeField] float waitTime;
     private void Awake()
     {
         /*if (!SceneManager.GetSceneByName("Demo").isLoaded)
@@ -37,7 +38,7 @@ public class TPToOutside : MonoBehaviour
         float t = 0;
         while (t < 1f)
         {
-            t += 0.01f;
+            t += waitTime;
             image.color = new Color(r, g, b, t);
             yield return null;
         }
