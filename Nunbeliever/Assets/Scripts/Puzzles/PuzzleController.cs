@@ -34,6 +34,7 @@ public class PuzzleController : MonoBehaviour
     //Win conditions van alle varianten van de puzzle.
     private void Update()
     {
+
         if(puzzleComplete && platesStayOn && !puzzleFinished)
         {
             PuzzleFinished();
