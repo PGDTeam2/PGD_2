@@ -5982,7 +5982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176044814645305608, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_Color.a
@@ -5990,7 +5990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_Color.b
-      value: 0.99607843
+      value: 0.84584963
       objectReference: {fileID: 0}
     - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_Color.g
@@ -5998,7 +5998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_Color.r
-      value: 0.49411765
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_Texture
@@ -6007,14 +6007,6 @@ PrefabInstance:
     - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3176044814645305610, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3176044814645305611, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d019d90b0de8b34aa4dbb07858089c8, type: 3}
