@@ -16332,10 +16332,10 @@ MonoBehaviour:
   dialogue:
     name: Me
     sentences:
-    - Am i dreaming? I should't be here, i hope the nany is already asleep...
-    - If i could just escapre this place, i miss playing outside...
+    - Am i dreaming? I should't be here, i hope Linda is already asleep...
+    - If i could just escape this place, i miss playing outside...
     - That could be the door to freedom!
-    - Where do the nany's keep the key for this door? hmm...
+    - Where does the Linda keep the key for this door? hmm...
   waitingTime: 0
 --- !u!1001 &1810692615
 PrefabInstance:
@@ -17839,6 +17839,10 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4682947780998776110, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b66e2a13ac7cfe448d43d5442b7480a, type: 2}
+    - target: {fileID: 4682947780998776110, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -17854,6 +17858,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 4682947780998776110, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8475036823989768740, guid: 2b66e2a13ac7cfe448d43d5442b7480a, type: 2}
     - target: {fileID: 4682947780998776110, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
@@ -17991,6 +17999,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4682947782634911013, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b66e2a13ac7cfe448d43d5442b7480a, type: 2}
+    - target: {fileID: 4682947782634911013, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
@@ -18006,6 +18018,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4682947782634911013, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8475036823989768740, guid: 2b66e2a13ac7cfe448d43d5442b7480a, type: 2}
     - target: {fileID: 4682947782634911013, guid: 09194f54324afd842b2f749a9831ebc2, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
