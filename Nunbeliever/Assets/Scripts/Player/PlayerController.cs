@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float gravity = 9.8f;
-    public LookAtInterect lookAt;
 
     public Camera playerCamera;
 
@@ -42,10 +41,6 @@ public class PlayerController : MonoBehaviour
  
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) )
-        {
-            lookAt.Interact();
-        }
 
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
