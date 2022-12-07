@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float gravity = 9.8f;
+    /*public LookAtInterect lookAt;*/
 
     public Camera playerCamera;
 
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public float Stamina = 100f;
     public float maxStamina = 100f;
-   
+
     CharacterController characterController;
 
     float rotationX = 0;
@@ -37,11 +38,17 @@ public class PlayerController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 144;
     }
- 
+
     void Update()
     {
-
+        Movement();
+    }
+    void Movement()
+    {
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -53,38 +60,40 @@ public class PlayerController : MonoBehaviour
         if (isRunning) { Stamina--; }
 
         //when not running the stamina will regen to MaxStamina
-        if(!isRunning && Stamina < maxStamina)
+        if (!isRunning && Stamina < maxStamina)
         {
-          StartCoroutine(RegenerateStamina());
+            StartCoroutine(RegenerateStamina());
         }
 
         //stops all CoRoutines in this script
         else if (Stamina == maxStamina)
         {
             StopAllCoroutines();
-          }
+        }
 
         //speed of the player
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
-       
+
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
         moveDirection.y = movementDirectionY;
-          
 
-        //gravity for falling
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
+
 
         // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);
+        if (characterController.enabled)
+            characterController.Move(moveDirection * Time.deltaTime);
 
         // Player and Camera rotation
         if (canMove)
         {
+            //gravity for falling
+            if (!characterController.isGrounded)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0); // up down
@@ -100,7 +109,7 @@ public class PlayerController : MonoBehaviour
             Stamina += maxStamina / 100;
             yield return new WaitForSeconds(0.1f);
         }
-        
+
     }
 
 }
