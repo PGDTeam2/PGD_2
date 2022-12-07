@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzzleController : MonoBehaviour
 {
-    public GameObject puzzleResult;
+    public DoorController puzzleResult;
 
     public int puzzlePiecesNeeded;
 
@@ -68,6 +68,7 @@ public class PuzzleController : MonoBehaviour
         if (puzzleComplete)
         {
             //OpenDeur() of iets in die richting
+            puzzleResult.SetOpen(true);
         }
     }
 
