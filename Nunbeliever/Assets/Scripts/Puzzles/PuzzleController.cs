@@ -67,7 +67,7 @@ public class PuzzleController : MonoBehaviour
         //Testing only, vervang dit door een daadwerkelijke deur ofzo
         if (puzzleComplete)
         {
-            //puzzleResult.transform.rotation = Quaternion.LookRotation(new Vector3(Random.Range(0, 2), 0, 0), new Vector3(0, 1, 0));
+            //OpenDeur() of iets in die richting
         }
     }
 

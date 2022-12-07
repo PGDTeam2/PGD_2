@@ -9830,9 +9830,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3693879698578002968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.969271, y: -2.3148293, z: -7.140784}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 10.969271, y: -2.3038, z: -7.140784}
+  m_LocalScale: {x: 0.66547, y: 0.66547, z: 0.66547}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3693879697858903571}
   - {fileID: 3693879698320203260}
@@ -9855,6 +9855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleInput: 0
+  locked: 0
 --- !u!65 &3693879698578002970
 BoxCollider:
   m_ObjectHideFlags: 0
