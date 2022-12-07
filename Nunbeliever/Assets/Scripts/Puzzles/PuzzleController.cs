@@ -67,7 +67,8 @@ public class PuzzleController : MonoBehaviour
         //Testing only, vervang dit door een daadwerkelijke deur ofzo
         if (puzzleComplete)
         {
-            //puzzleResult.transform.rotation = Quaternion.LookRotation(new Vector3(Random.Range(0, 2), 0, 0), new Vector3(0, 1, 0));
+            puzzleResult.GetComponent<Rigidbody>().velocity = Vector3.left * 5;
+            activatedPuzzlePieces = 0;
         }
     }
 
