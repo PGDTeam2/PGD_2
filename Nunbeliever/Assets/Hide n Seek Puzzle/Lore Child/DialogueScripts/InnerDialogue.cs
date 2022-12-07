@@ -21,14 +21,18 @@ public class InnerDialogue : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!dialogueManager.alreadyTriggered)
+        if (other.CompareTag("DialogueTrigger"))
         {
-            dialogueManager.alreadyTriggered = true;
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            if (!dialogueManager.alreadyTriggered)
+            {
+                dialogueManager.alreadyTriggered = true;
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            }
+            else { dialogueManager.DisplayNextSentence(); }
+            other.gameObject.SetActive(false);
+
+            StartCoroutine(dialogueManager.unloadSentence());
         }
-        else { dialogueManager.DisplayNextSentence(); }
-       
-        StartCoroutine(dialogueManager.unloadSentence());
     }
     
 }

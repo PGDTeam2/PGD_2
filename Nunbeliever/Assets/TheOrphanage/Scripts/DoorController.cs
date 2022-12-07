@@ -10,7 +10,7 @@ public class DoorController : MonoBehaviour
 
     private bool m_isOpen;
     private bool m_openedByNun;
-
+    private bool m_isHovering;
     private Animator m_animator;
 
     private void Awake()

@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4005629665845908}
   - component: {fileID: 514356700993761186}
-  - component: {fileID: 1921851385414368823}
+  - component: {fileID: 2706202970074879711}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -281,7 +281,7 @@ MonoBehaviour:
   autoCloseTime: 5
   IsLocked: 0
   isBlocked: 0
---- !u!95 &1921851385414368823
+--- !u!95 &2706202970074879711
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ GameObject:
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4712692843169828
 Transform:

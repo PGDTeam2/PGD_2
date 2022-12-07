@@ -6,7 +6,7 @@ public class KeyPickup : MonoBehaviour
 {
     private bool m_isHovering;
     private GameObject m_lastHover;
-    private bool m_hasKey;
+    internal bool m_hasKey;
 
     internal bool HasKey { get { return m_hasKey; } }
 
@@ -14,9 +14,9 @@ public class KeyPickup : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out var hitInfo, 2))
         {
+                // Send OnHoverChanged only when changed :)
             if (hitInfo.collider.CompareTag("Key"))
             {
-                // Send OnHoverChanged only when changed :)
                 if (!m_isHovering)
                 {
                     m_lastHover = hitInfo.collider.gameObject;

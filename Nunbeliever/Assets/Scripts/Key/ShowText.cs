@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ShowTextOnHover : MonoBehaviour
+public class ShowText : MonoBehaviour
 {
     private Animator m_animator;
 
     private void Awake()
     {
-        // this gameobject > Canvas > TextMeshPro text
         m_animator = GetComponent<Animator>();
     }
 

@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\Nunbeliever",
-    "\\Nunbeliever\\Assets"
+    "\\Nunbeliever\\Assets",
+    "\\Nunbeliever\\Assets\\Angel",
+    "\\Nunbeliever\\Assets\\Animation",
+    "\\Nunbeliever\\Assets\\Hide n Seek Puzzle",
+    "\\Nunbeliever\\Assets\\Materials",
+    "\\Nunbeliever\\Packages"
   ],
-  "SelectedNode": "\\Nunbeliever\\Assets\\_TerrainAutoUpgrade",
+  "SelectedNode": "\\Nunbeliever\\Assets\\Hide n Seek Puzzle\\StateMachine.cs",
   "PreviewInSolutionExplorer": false
 }
