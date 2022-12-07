@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TriggerText : MonoBehaviour
 {
+
     public GameObject text;
 
     public void Start()

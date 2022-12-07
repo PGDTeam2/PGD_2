@@ -11,7 +11,6 @@ public class LookAtInterect : MonoBehaviour
     
     private void Update()
     {
-        print(cam.transform.position);
 
         Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.yellow);
         if (Input.GetKeyDown(KeyCode.E))
@@ -19,7 +18,6 @@ public class LookAtInterect : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
             {
-                print(hit.collider.gameObject);
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null)
                 {

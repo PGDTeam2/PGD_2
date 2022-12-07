@@ -7,7 +7,7 @@ public class Interactable : MonoBehaviour, IInteractable
 {
     public UnityEvent interact;
 
-    public void Interact()
+    public virtual void Interact()
     {
         interact.Invoke();
     }
