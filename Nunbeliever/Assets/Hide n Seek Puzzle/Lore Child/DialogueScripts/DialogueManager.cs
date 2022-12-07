@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
 		foreach (char letter in sentence.ToCharArray())
 		{
 			dialogueText.text += letter;
-			yield return new WaitForSeconds(0.03f);
+			yield return new WaitForSeconds(0.06f);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
 	}
 	internal IEnumerator unloadSentence()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(6);
 		dialogueScreen.SetActive(false);
 	}
 }
