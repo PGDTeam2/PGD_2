@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    /* This script manages the movement of the player using the
+     * character controller.
+     */
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float gravity = 9.8f;

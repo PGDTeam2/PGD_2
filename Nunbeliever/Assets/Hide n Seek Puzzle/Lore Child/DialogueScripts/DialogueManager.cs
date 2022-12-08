@@ -7,7 +7,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-
+	// this script manages every dialogue in the game.
+	
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
 	public GameObject dialogueScreen;
