@@ -14,7 +14,7 @@ public class CareGiverSM : StateMachine
 
     [Header("Catching the player")]
     [SerializeField] internal PlayerController playerController;
-    [SerializeField] private float grabLength = 1f;
+    [SerializeField] private float grabLength = 2f;
     [SerializeField] internal float fov = 90;
  
     internal bool playerCaught;
@@ -67,7 +67,7 @@ public class CareGiverSM : StateMachine
                 if (hitInfo.collider.CompareTag("Player") && !goBackPatrol && !HideMechanic.hiding)
                 {
                     //grabs the player and puts him back to the spawnpoint
-                    if (hitInfo.distance < grabLength)
+                    if (hitInfo.distance <= grabLength)
                     {
                         playerCaught = true;
                     }
