@@ -32,6 +32,12 @@ public class ChaseState : State
        else if (!sM.FindPlayer())
         {
             sM.fov = 180;
+            float t = 10f;
+            while (t > 0 && !HideMechanic.hiding)
+            {
+                t -= 0.1f;
+                return;
+            }
             machine.changeState(sM.searchState);
         }
         

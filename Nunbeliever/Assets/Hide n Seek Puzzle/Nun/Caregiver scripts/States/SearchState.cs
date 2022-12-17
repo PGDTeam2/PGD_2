@@ -40,6 +40,7 @@ public class SearchState : State
             reachedWaypoint = false;
             return;
         }
+        
 
     }
     public override void Exit()

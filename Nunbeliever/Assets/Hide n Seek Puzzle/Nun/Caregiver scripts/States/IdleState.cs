@@ -37,6 +37,7 @@ public class IdleState : State
     }
     public override void Exit()
     {
+        sM.goBackPatrol = false;
         sM.StopAllCoroutines();
         sM.setAnimation(0);
         base.Exit();    

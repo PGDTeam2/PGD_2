@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CatchState : State
 {
@@ -8,6 +9,7 @@ public class CatchState : State
     private GameObject playerSpawnPoint;
     private GameObject carry;
     private CharacterController playerCC;
+    private AudioSource audioSource;   
 
     public CatchState(CareGiverSM stateMachine) : base(stateMachine)
     {
@@ -15,15 +17,17 @@ public class CatchState : State
         playerCC = sM.playerController.GetComponent<CharacterController>();
         carry = GameObject.FindGameObjectWithTag("Carry");
         playerSpawnPoint = GameObject.FindGameObjectWithTag("Spawnpoint");
+        audioSource = GameObject.FindGameObjectWithTag("Nun").GetComponent<AudioSource>();
     }
     public override void Enter()
     {
         base.Enter();
+        audioSource.Play();
     }
     public override void Update()
     {
         base.Update();
-
+        
         sM.setAnimation(2); //grab animation
         bringingPlayerBackToSpawn();
 
