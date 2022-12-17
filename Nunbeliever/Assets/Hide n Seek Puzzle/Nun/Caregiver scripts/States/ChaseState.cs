@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class ChaseState : State
 {
     // Start is called before the first frame update
     private CareGiverSM sM;
     private GameObject player;
+    AudioSource audioSource;
     public ChaseState(CareGiverSM stateMachine) : base(stateMachine)
     {
         sM = (CareGiverSM)this.machine;
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GameObject.FindGameObjectWithTag("Nun").GetComponent<AudioSource>();
+        
     }
     public override void Enter()
     {
         base.Enter();
+        audioSource.Play();
     }
     public override void Update()
     {

@@ -17,7 +17,7 @@ public class CatchState : State
         playerCC = sM.playerController.GetComponent<CharacterController>();
         carry = GameObject.FindGameObjectWithTag("Carry");
         playerSpawnPoint = GameObject.FindGameObjectWithTag("Spawnpoint");
-        audioSource = GameObject.FindGameObjectWithTag("Nun").GetComponent<AudioSource>();
+        audioSource = carry.GetComponent<AudioSource>();
     }
     public override void Enter()
     {
