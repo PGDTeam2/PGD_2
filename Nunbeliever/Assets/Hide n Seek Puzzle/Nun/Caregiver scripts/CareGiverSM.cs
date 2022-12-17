@@ -60,9 +60,12 @@ public class CareGiverSM : StateMachine
         if (Vector3.Angle(transform.forward, distance.normalized) < fov / 2)
         {
             float length = (playerController.transform.position - transform.position).magnitude;
+           
             //Calculates the agents raycast
             if (Physics.Raycast(transform.position, distance.normalized, out RaycastHit hitInfo, length + 1))
             {
+             
+                Debug.Log(hitInfo.collider);
                 //checks if the raycast hits the player and checks if the agent isnt coming back from the spawnpoint
                 if (hitInfo.collider.CompareTag("Player") && !goBackPatrol && !HideMechanic.hiding)
                 {
