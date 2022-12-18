@@ -24,6 +24,7 @@ public class HideMechanic : MonoBehaviour
 
     private void Start()
     {
+        hiding = false;
         mainCamera = Camera.main;
         playerController = gameObject.GetComponent<PlayerController>();
     }
