@@ -13,9 +13,14 @@ public class DoorController : MonoBehaviour
     private bool m_isHovering;
     private Animator m_animator;
 
+    public AudioClip openAudio;
+    public AudioClip closeAudio;
+    AudioSource audioSource;
+
     private void Awake()
     {
         m_animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +50,7 @@ public class DoorController : MonoBehaviour
         // Prevent autoclose when the player interacts with the door
         m_openedByNun = false;
         m_isOpen = open;
+        audioSource.PlayOneShot(open ? openAudio : closeAudio);
         m_animator.SetBool("is_open", open);
     }
 
