@@ -8,20 +8,23 @@ using System;
 public class DoorLocktext : MonoBehaviour
 {
     private KeyPickup keyPickup;
+    private DoorController doorController;
     [SerializeField] private TextMeshPro text;
     [SerializeField] private GameObject Object;
 
     // Start is called before the first frame update
     void Start()
     {
+        doorController = GetComponentInParent<DoorController>();
         keyPickup = FindObjectOfType<KeyPickup>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (keyPickup.m_hasKey) { Object.SetActive(false); }
+        if (keyPickup.OwnedKeys.Contains(doorController.ID)) { Object.SetActive(false); }
     }
+
     void OnTriggerEnter(Collider other)
     {
         StartCoroutine(TextFade(0,1));

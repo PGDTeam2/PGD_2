@@ -1487,6 +1487,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5041317348379154961, guid: c4cf54d84b03ef84699e9fb01a89df15, type: 3}
+      propertyPath: ID
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4cf54d84b03ef84699e9fb01a89df15, type: 3}
 --- !u!1001 &422832113
@@ -6097,6 +6101,10 @@ PrefabInstance:
     - target: {fileID: 4072289922161828111, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
       propertyPath: m_Name
       value: CareGiver(hide and seek)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072289922161828111, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4072289922161828111, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26459,6 +26467,10 @@ PrefabInstance:
     - target: {fileID: 1410979941120743044, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_Name
       value: KeyHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076443132351737654, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
+      propertyPath: ID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
