@@ -68,7 +68,7 @@ public class CareGiverSM : StateMachine
                 if (hitInfo.collider.CompareTag("Player") && !goBackPatrol && !HideMechanic.hiding)
                 {
              
-                Debug.Log(hitInfo.collider);
+                //Debug.Log(hitInfo.collider);
                     //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance <= grabLength)
                     {

@@ -6,9 +6,16 @@ public class KeyPickup : MonoBehaviour
 {
     private bool m_isHovering;
     private GameObject m_lastHover;
-    internal bool m_hasKey;
+    private List<int> m_ownedKeys = new();
+    private bool pressed;
 
-    internal bool HasKey { get { return m_hasKey; } }
+    internal List<int> OwnedKeys { get { return m_ownedKeys; } }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            pressed = true;
+    }
 
     private void FixedUpdate()
     {
@@ -25,9 +32,9 @@ public class KeyPickup : MonoBehaviour
                 }
 
                 // Pickup key when pressing E
-                if (Input.GetKeyDown(KeyCode.E))
+                if (pressed)
                 {
-                    m_hasKey = true;
+                    m_ownedKeys.Add(hitInfo.collider.GetComponent<Key>().ID);
                     Destroy(hitInfo.collider.gameObject);
                 }
                 return;
@@ -45,5 +52,6 @@ public class KeyPickup : MonoBehaviour
             }
         }
 
+        pressed = false;
     }
 }
