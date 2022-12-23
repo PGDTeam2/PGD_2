@@ -22,10 +22,10 @@ public class SearchState : State
     }
     public override void Update()
     {
+        sM.FindPlayer();
         base.Update();
         sM.setAnimation(0);
         Patrol();
-        sM.FindPlayer();
 
         if (sM.FindPlayer())
         {

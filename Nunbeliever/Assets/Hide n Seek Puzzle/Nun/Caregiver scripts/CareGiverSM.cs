@@ -16,6 +16,7 @@ public class CareGiverSM : StateMachine
     [SerializeField] internal PlayerController playerController;
     [SerializeField] private float grabLength = 2f;
     [SerializeField] internal float fov = 90;
+    [SerializeField] LayerMask layer;
  
     internal bool playerCaught;
     internal bool playerSeen;
@@ -48,14 +49,17 @@ public class CareGiverSM : StateMachine
         goBackPatrol = true;
         playerCaught = false;
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         goBackPatrol = false;
     }
-
+    public void FixedUpdate()
+    {
+       
+    }
     internal bool FindPlayer()
     {
         var distance = playerController.transform.position - transform.position;
-
+        
         //Calculates the angle from which the agent can see the player
         if (Vector3.Angle(transform.forward, distance.normalized) < fov / 2)
         {
@@ -68,7 +72,7 @@ public class CareGiverSM : StateMachine
                 if (hitInfo.collider.CompareTag("Player") && !goBackPatrol && !HideMechanic.hiding)
                 {
              
-                //Debug.Log(hitInfo.collider);
+               
                     //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance <= grabLength)
                     {
