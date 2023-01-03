@@ -27,12 +27,17 @@ public class DoorLocktext : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(TextFade(0,1));
+        if (!other.CompareTag("Nun"))
+        {
+            StartCoroutine(TextFade(0, 1));
+        }
     }
     void OnTriggerExit(Collider other)
     {
-
-        StartCoroutine(TextFade(1,0));
+        if (!other.CompareTag("Nun"))
+        {
+            StartCoroutine(TextFade(1, 0));
+        }
     }
     IEnumerator TextFade(float start, float end)
     {
@@ -41,6 +46,7 @@ public class DoorLocktext : MonoBehaviour
         while (currentTime < duration)
         {
             float alpha = Mathf.Lerp(start, end, currentTime / duration);
+            Debug.Log(alpha);
             text.color = new Color(255, 255, 255, alpha);
             currentTime += Time.deltaTime;
             yield return null;

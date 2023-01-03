@@ -17,7 +17,7 @@ public class CareGiverSM : StateMachine
     [SerializeField] private float grabLength = 2f;
     [SerializeField] internal float fov = 90;
     [SerializeField] LayerMask layer;
- 
+
     internal bool playerCaught;
     internal bool playerSeen;
     internal bool goBackPatrol;
@@ -52,10 +52,7 @@ public class CareGiverSM : StateMachine
         yield return new WaitForSeconds(3);
         goBackPatrol = false;
     }
-    public void FixedUpdate()
-    {
-       
-    }
+
     internal bool FindPlayer()
     {
         var distance = playerController.transform.position - transform.position;
@@ -71,8 +68,6 @@ public class CareGiverSM : StateMachine
                 //checks if the raycast hits the player and checks if the agent isnt coming back from the spawnpoint
                 if (hitInfo.collider.CompareTag("Player") && !goBackPatrol && !HideMechanic.hiding)
                 {
-             
-               
                     //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance <= grabLength)
                     {
@@ -86,5 +81,18 @@ public class CareGiverSM : StateMachine
         }
         else return false;
     }
+    void OnTriggerEnter(Collider collider)
+    {
 
+        if (collider.CompareTag("Door"))
+        {
+            if (collider.gameObject.GetComponent<DoorController>().ID == -1)
+            {
+                if (searchState.currentWaypoint != searchState.waypointList.Length - 1)
+                {
+                    searchState.currentWaypoint++;
+                }
+            }
+        }
+    }
 }

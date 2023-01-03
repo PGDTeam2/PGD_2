@@ -7,14 +7,21 @@ public class SearchState : State
     private CareGiverSM sM;
 
     [Header("Pathfinding")]
-    [HideInInspector] internal int currentWaypoint = 0;
+   
     [HideInInspector] internal bool reachedWaypoint;
     [HideInInspector] internal Transform nextWaypoint;
-    [HideInInspector] private GameObject[] waypointList;
+    [HideInInspector] internal GameObject[] waypointList;
+    [SerializeField] internal int currentWaypoint = 0;
+
+
+
     public SearchState(CareGiverSM machine) : base(machine)
     {
         sM = (CareGiverSM)this.machine;
         waypointList = GameObject.FindGameObjectsWithTag("Waypoints");
+        
+        //collider = GameObject.FindGameObjectWithTag("Nun").GetComponent<CapsuleCollider>();
+     
     }
     public override void Enter()
     {
@@ -47,6 +54,7 @@ public class SearchState : State
     }
     internal void Patrol()
     {
+       
         //Moving towards the destination
         sM.agent.destination = waypointList[currentWaypoint].transform.position;
 
@@ -76,5 +84,11 @@ public class SearchState : State
             reachedWaypoint = true;
 
         }
+
+   
     }
+    
+
+
+
 }

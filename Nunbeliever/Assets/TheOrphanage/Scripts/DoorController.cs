@@ -26,7 +26,7 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // if the nun gets in range, open the door and start autoclose coroutine
-        if (other.CompareTag("Nun"))
+        if (other.CompareTag("Nun")&& ID == -1)
         {
             if (!m_isOpen)
             {
@@ -69,6 +69,10 @@ public class DoorController : MonoBehaviour
 
         // Only require key if door is locked
         if (ID == -1 || keys.Contains(ID))
+        {
             ToggleDoor();
+            ID= -1;
+        }
+            
     }
 }
