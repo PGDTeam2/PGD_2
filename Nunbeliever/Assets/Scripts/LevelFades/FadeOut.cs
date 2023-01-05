@@ -22,7 +22,11 @@ public class FadeOut : MonoBehaviour
             StartCoroutine(DoTransition(m_scene, r, g, b));
         }
     }
-
+    public void switchscene(string name)
+    {
+        m_whiteOutPanel = GameObject.FindWithTag("WhiteOutPanel");
+        StartCoroutine(DoTransition(name, r, g, b));
+    }
     IEnumerator DoTransition(string scene,int r, int g, int b)
     {
         var image = m_whiteOutPanel.GetComponent<Image>();
