@@ -39,7 +39,7 @@ public class FadeOut : MonoBehaviour
             image.color = new Color(r, g, b, t);
             yield return null;
         }
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadSceneAsync(scene);
         yield return new WaitForSeconds(0.1f);
 
     }

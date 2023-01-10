@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4109572419127070}
   m_Layer: 0
   m_Name: DoorA
-  m_TagString: Door
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -280,8 +280,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoCloseTime: 5
-  IsLocked: 0
+  ID: -1
   isBlocked: 0
+  openAudio: {fileID: 0}
+  closeAudio: {fileID: 0}
 --- !u!95 &2706202970074879711
 Animator:
   serializedVersion: 4
@@ -313,8 +315,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 5}
-  m_Center: {x: -1, y: 0, z: 0.5}
+  m_Size: {x: 1, y: 0.5, z: 3}
+  m_Center: {x: -1, y: 0, z: -1}
 --- !u!1 &1828071717765076
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +430,7 @@ GameObject:
   - component: {fileID: 7115304150137528036}
   m_Layer: 9
   m_Name: DoorA
-  m_TagString: Door
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
