@@ -46,7 +46,7 @@ public class DialogueTrigger : MonoBehaviour
             animator.ResetTrigger("Talk");
 
             //when hes done talking he will walk back to his old position
-            transform.position = Vector3.MoveTowards(transform.position, backPoint.transform.position, 0.01f);
+            transform.position = Vector3.MoveTowards(transform.position, backPoint.transform.position, 0.02f);
             Vector3 direction = (backPoint.transform.position - transform.position).normalized;
             transform.rotation = Quaternion.LookRotation(direction);
 
