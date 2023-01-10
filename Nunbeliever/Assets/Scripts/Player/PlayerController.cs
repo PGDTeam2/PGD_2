@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
 
     CharacterController characterController;
 
+    public AudioClip walkAudio;
+    AudioSource audioSource;
+
     float rotationX = 0;
 
     [HideInInspector]
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        audioSource = GetComponent<AudioSource>();
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -82,7 +86,13 @@ public class PlayerController : MonoBehaviour
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
         moveDirection.y = movementDirectionY;
 
-
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(walkAudio);
+            }
+        }
 
         // Move the controller
         if (characterController.enabled)

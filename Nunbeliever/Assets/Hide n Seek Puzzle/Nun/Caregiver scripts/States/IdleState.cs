@@ -19,6 +19,7 @@ public class IdleState : State
     public override void Update()
     {
         base.Update();
+        sM.FindPlayer();
         if (sM.FindPlayer())
         {
             machine.changeState(sM.chaseState);
