@@ -27938,7 +27938,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 966259445}
+      - m_Target: {fileID: 704959137}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -63249,6 +63249,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4020718017835613921, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46cee7ba3d0514a49b52cc081ad6ca85, type: 3}
+    - target: {fileID: 4020718017835613921, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020718017835613921, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 6437898178940780649, guid: 06cde0b187d16d7438165589b6bbc056, type: 2}
     - target: {fileID: 6804027203838783741, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -63304,6 +63316,14 @@ PrefabInstance:
     - target: {fileID: 6804027203838783742, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
       propertyPath: r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804027203838783742, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46cee7ba3d0514a49b52cc081ad6ca85, type: 3}
+    - target: {fileID: 6804027203838783742, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
+      propertyPath: audioIncluded
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6804027203838783743, guid: 4016ab51e1612734991b1f6827681e0c, type: 3}
       propertyPath: m_Name

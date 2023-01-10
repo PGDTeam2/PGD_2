@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
+[RequireComponent(typeof(AudioSource))]
 public class FadeOut : MonoBehaviour
 {
     private GameObject m_whiteOutPanel;
@@ -12,8 +14,14 @@ public class FadeOut : MonoBehaviour
     [SerializeField] int g;
     [SerializeField] int b;
     [Tooltip("Time to fade"), SerializeField] float waitTime;
-    
+    AudioSource audioSource;
+    public AudioClip clip;
+    public bool audioIncluded;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("player"))
@@ -35,6 +43,12 @@ public class FadeOut : MonoBehaviour
         float t = 0;
         while (t < 1f)
         {
+            if (audioIncluded)
+            {
+                audioSource.PlayOneShot(clip);
+                audioIncluded = false;
+            }
+
             t += waitTime;
             image.color = new Color(r, g, b, t);
             yield return null;
@@ -43,6 +57,8 @@ public class FadeOut : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
     }
+
+    
     public void exit()
     {
         Application.Quit();
