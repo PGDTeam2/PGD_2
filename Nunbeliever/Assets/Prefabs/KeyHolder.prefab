@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 1410979941120743042}
   - component: {fileID: 1410979941120743041}
   - component: {fileID: 1410979941120743040}
+  - component: {fileID: 5076443132351737654}
   m_Layer: 0
   m_Name: KeyHolder
   m_TagString: Key
@@ -253,6 +254,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5076443132351737654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410979941120743044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e024d19a2d7c9045b123bf151dc96c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: -1
 --- !u!1001 &1410979941496372822
 PrefabInstance:
   m_ObjectHideFlags: 0

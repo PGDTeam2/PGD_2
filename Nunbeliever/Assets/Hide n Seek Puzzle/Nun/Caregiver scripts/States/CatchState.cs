@@ -17,7 +17,7 @@ public class CatchState : State
         playerCC = sM.playerController.GetComponent<CharacterController>();
         carry = GameObject.FindGameObjectWithTag("Carry");
         playerSpawnPoint = GameObject.FindGameObjectWithTag("Spawnpoint");
-        audioSource = GameObject.FindGameObjectWithTag("Nun").GetComponent<AudioSource>();
+        audioSource = carry.GetComponent<AudioSource>();
     }
     public override void Enter()
     {
@@ -39,6 +39,7 @@ public class CatchState : State
     }
     public override void Exit()
     {
+        sM.fov = 180;
         base.Exit();
     }
     internal bool bringingPlayerBackToSpawn()
@@ -52,13 +53,15 @@ public class CatchState : State
             sM.playerController.canMove = false;
 
             //moves the player with the agents so the agent automatically creates the path for both objects
-            sM.playerController.transform.SetPositionAndRotation(carry.transform.position, carry.transform.rotation);
+            sM.playerController.transform.position = carry.transform.position;
+            sM.playerController.playerCamera.transform.rotation = carry.transform.rotation;
+           
             return true;
         }
         else
         {
             playerCC.enabled = true;
-            sM.playerController.transform.SetPositionAndRotation(carry.transform.position, carry.transform.rotation);
+            sM.playerController.transform.position = carry.transform.position;
             sM.playerController.canMove = true;
             sM.StartCoroutine(sM.goBackToPatrol());
             return false;
