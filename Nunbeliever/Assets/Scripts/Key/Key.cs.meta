@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Scripts/Key/Key.cs.meta
 guid: 5e024d19a2d7c9045b123bf151dc96c4
+========
+guid: 5a6c3a243cae7fa4881ae16f5c9f1510
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Editor/ImageEffects/AntialiasingEditor.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

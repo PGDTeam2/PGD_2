@@ -19,12 +19,11 @@ public class DoorInteract : MonoBehaviour
     {
         if (pressed)
         {
+            
             if (Physics.Raycast(transform.position, transform.forward, out var hitInfo, interactionRange, LayerMask.GetMask("Door")))
             {
-                if (hitInfo.collider.CompareTag("Door"))
-                {
+
                     hitInfo.collider.SendMessageUpwards("OnInteract", GetComponent<KeyPickup>().OwnedKeys);
-                }
             }
         }
         pressed = false;

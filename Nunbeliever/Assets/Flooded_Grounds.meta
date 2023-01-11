@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Flooded_Grounds.meta
 guid: 5a9c9484a4111a44a81808e515baba03
+========
+guid: 6a58558b4215fa648930bc025294cdb9
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
