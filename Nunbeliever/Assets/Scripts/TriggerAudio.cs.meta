@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Scripts/TriggerAudio.cs.meta
 guid: cfca50503cbf95842835feba992e3fe8
+========
+guid: 0cac166588f91054cbbe3513716c64ee
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Editor/ImageEffects/BloomAndFlaresEditor.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

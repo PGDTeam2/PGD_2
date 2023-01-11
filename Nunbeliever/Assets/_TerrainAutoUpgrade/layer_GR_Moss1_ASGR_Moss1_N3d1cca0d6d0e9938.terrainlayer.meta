@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Flooded_Grounds/Scenes/Scene_ASettings.lighting.meta
+guid: 90d2d87625d445b4a93bf81caff28525
+========
 guid: 745439dee94b9da44b7332ab2a599c1c
+>>>>>>>> develop:Nunbeliever/Assets/_TerrainAutoUpgrade/layer_GR_Moss1_ASGR_Moss1_N3d1cca0d6d0e9938.terrainlayer.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 8574412962073106934
+  mainObjectFileID: 4890085278179872738
   userData: 
   assetBundleName: 
   assetBundleVariant: 

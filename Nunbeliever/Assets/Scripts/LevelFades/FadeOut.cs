@@ -57,8 +57,6 @@ public class FadeOut : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
     }
-
-    
     public void exit()
     {
         Application.Quit();

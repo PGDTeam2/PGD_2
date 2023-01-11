@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/_TerrainAutoUpgrade.meta
 guid: 276f178ca52445f4cac75f01e82f6d3b
+========
+guid: 75d7aa78aa9329e4ca4e21e773d3ab64
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/_TerrainAutoUpgrade.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
