@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Prefabs/Rooms/House d1/Lightmap-0_comp_dir.png.meta
 guid: 45a40ab3667b3ca4fb81764568779c3e
+========
+guid: 317ae6264d3eb2646aeeee1b12959daf
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Nature/tree02_Textures/normal_specular.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +11,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0

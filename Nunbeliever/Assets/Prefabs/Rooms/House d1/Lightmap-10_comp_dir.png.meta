@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Prefabs/Rooms/House d1/Lightmap-10_comp_dir.png.meta
 guid: 681eef1f20cc6514c8652fa60b240333
+========
+guid: 1288b292de5f89049b9cecea68737b2f
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Nature/tree02_Textures/translucency_gloss.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +11,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
