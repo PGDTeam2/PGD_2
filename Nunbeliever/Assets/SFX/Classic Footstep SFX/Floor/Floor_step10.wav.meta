@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 10485b9efe2bd994f98d392f91dd1a0a
+=======
 <<<<<<<< HEAD:Nunbeliever/Assets/SFX/Classic Footstep SFX/Floor/Floor_step10.wav.meta
 guid: 10485b9efe2bd994f98d392f91dd1a0a
 ========
 guid: 30bfc3f5251676b48ab65b9dedbe12ab
 >>>>>>>> develop:Nunbeliever/Assets/Arya of Terror - FREE Haunted Jump Scares/2021_HJS_JumpScare_Large_1_OD.wav.meta
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
