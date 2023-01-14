@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Nunbeliever/Assets/Settings/OptionsMenu.cs.meta
 guid: 212ef802faf344c4596cbd8d0f7f4835
+========
+guid: 7052d0b2229ba1e45b11b345403d582c
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Editor/ImageEffects/BloomEditor.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

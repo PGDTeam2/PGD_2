@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0d1c6ff54ea23ff4092ae02f74565709
+=======
+<<<<<<<< HEAD:Nunbeliever/Assets/Prefabs/Rooms/House d1/Lightmap-11_comp_dir.png.meta
+guid: 0d1c6ff54ea23ff4092ae02f74565709
+========
+guid: 320c0378ca3c3824fa6c5bd6b15a61e4
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Nature/tree02_Textures/shadow.png.meta
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -7,7 +15,11 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+<<<<<<< HEAD
     sRGBTexture: 0
+=======
+    sRGBTexture: 1
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0

@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ab5708f393c06ac4096dbcb3304a22d1
+=======
+<<<<<<<< HEAD:Nunbeliever/Assets/Prefabs/Rooms/House d1/Lightmap-0_comp_light.exr.meta
+guid: ab5708f393c06ac4096dbcb3304a22d1
+========
+guid: 5eacbc6cc8e4d3245b1234bb6d6123af
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Nature/tree02_Textures/diffuse.png.meta
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -50,7 +58,15 @@ TextureImporter:
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
+<<<<<<< HEAD
   alphaUsage: 0
+=======
+<<<<<<<< HEAD:Nunbeliever/Assets/Prefabs/Rooms/House d1/Lightmap-0_comp_light.exr.meta
+  alphaUsage: 0
+========
+  alphaUsage: 1
+>>>>>>>> develop:Nunbeliever/Assets/NatureStarterKit2/Nature/tree02_Textures/diffuse.png.meta
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 6

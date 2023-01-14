@@ -1,8 +1,23 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Nunbeliever/Assets/_TerrainAutoUpgrade/layer_GR_Asphalt1_ASGR_Asphalt1_Nd261c09ae55ba1e3.terrainlayer.meta
 guid: 71329e9dbfc57434f8c83a67727a50c0
+=======
+guid: ee6c571960d890c47a10a19fd2f8b03a
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b:Nunbeliever/Assets/Flooded_Grounds/Content/Meshes/mHelpers/Materials/_BLOCKERCUBE-No Name.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+=======
+<<<<<<<< HEAD:Nunbeliever/Assets/_TerrainAutoUpgrade/layer_GR_Dirt1_ASGR_Dirt1_N3d1cca0d6d0e9938.terrainlayer.meta
+guid: 245f5ccbd13219748932c0b4710c3c80
+========
+guid: 71329e9dbfc57434f8c83a67727a50c0
+>>>>>>>> develop:Nunbeliever/Assets/_TerrainAutoUpgrade/layer_GR_Asphalt1_ASGR_Asphalt1_Nd261c09ae55ba1e3.terrainlayer.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 8574412962073106934
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
   userData: 
   assetBundleName: 
   assetBundleVariant: 
