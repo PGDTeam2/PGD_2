@@ -92,7 +92,7 @@ public class CareGiverSM : StateMachine
 
         if (collider.CompareTag("Door"))
         {
-            if (collider.gameObject.GetComponent<DoorController>().ID == -1)
+            if (collider.gameObject.GetComponent<DoorController>().ID != -1)
             {
                 if (searchState.currentWaypoint != searchState.waypointList.Length - 1)
                 {
