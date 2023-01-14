@@ -6,7 +6,13 @@ public class DoorInteract : MonoBehaviour
 {
     [SerializeField] private float interactionRange;
 
+    private KeyPickup keyPickup;
     private bool pressed;
+
+    private void Start()
+    {
+        keyPickup = GetComponent<KeyPickup>();
+    }
 
     private void Update()
     {
@@ -19,11 +25,9 @@ public class DoorInteract : MonoBehaviour
     {
         if (pressed)
         {
-            
             if (Physics.Raycast(transform.position, transform.forward, out var hitInfo, interactionRange, LayerMask.GetMask("Door")))
             {
-
-                    hitInfo.collider.SendMessageUpwards("OnInteract", GetComponent<KeyPickup>().OwnedKeys);
+                hitInfo.collider.SendMessageUpwards("OnInteract", keyPickup.OwnedKeys);
             }
         }
         pressed = false;
