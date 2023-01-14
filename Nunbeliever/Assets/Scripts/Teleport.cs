@@ -6,11 +6,18 @@ public class Teleport : MonoBehaviour
 {
     public Transform teleportTarget;
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            collision.gameObject.transform.position = teleportTarget.position;
+            StartCoroutine(DelayTeleport(other));
         }
+    }
+
+        IEnumerator DelayTeleport(Collider player)
+    {
+        yield return new WaitForSeconds(0.3f);
+        player.transform.position = teleportTarget.position;
     }
 }
