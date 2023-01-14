@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         // Lock cursor
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 144;
