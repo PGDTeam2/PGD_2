@@ -1,4 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Nunbeliever/Assets/_TerrainAutoUpgrade/layer_GR_Dirt1_ASGR_Dirt1_N3d1cca0d6d0e9938.terrainlayer.meta
+guid: 245f5ccbd13219748932c0b4710c3c80
+=======
+guid: 3371c8c36b6158f4680d5a8918831618
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b:Nunbeliever/Assets/Flooded_Grounds/Scenes/Scene_ASettings.lighting.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+=======
 <<<<<<<< HEAD:Nunbeliever/Assets/_TerrainAutoUpgrade/layer_GR_Moss1_ASGR_Moss1_N3d1cca0d6d0e9938.terrainlayer.meta
 guid: 745439dee94b9da44b7332ab2a599c1c
 ========
@@ -7,6 +17,7 @@ guid: 245f5ccbd13219748932c0b4710c3c80
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 8574412962073106934
+>>>>>>> 1b747104ebbd5791b250fb99058b2d89f5b03d7b
   userData: 
   assetBundleName: 
   assetBundleVariant: 
