@@ -22,7 +22,7 @@ public class DoorController : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        occlusionPortal = GetComponent<OcclusionPortal>();
+        //occlusionPortal = GetComponent<OcclusionPortal>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,7 +55,7 @@ public class DoorController : MonoBehaviour
         if (openAudio != null && closeAudio != null)
             audioSource.PlayOneShot(open ? openAudio : closeAudio);
         m_animator.SetBool("is_open", open);
-        occlusionPortal.open = open;
+        //occlusionPortal.open = open;
     }
 
     public void ToggleDoor()
