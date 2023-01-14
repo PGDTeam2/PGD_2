@@ -17,7 +17,7 @@ public class DialogueChanger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!dialogueChanged && other.CompareTag("Player"))
+        if (!dialogueChanged)
         {
             Evan.dialogue = newDialogue;
             dialogueChanged = true;
