@@ -5,7 +5,7 @@ using UnityEngine;
 public class HideMechanic : MonoBehaviour
 {
 
-    float range = 4f;
+    float range = 2f;
     Camera cam;
     Camera mainCamera;
     public static bool hiding;
