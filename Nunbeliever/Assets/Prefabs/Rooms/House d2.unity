@@ -3254,8 +3254,8 @@ MonoBehaviour:
     Just hit the back of the machine, works
     everytime'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
-  m_sharedMaterial: {fileID: 3677581692618410934, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3344,7 +3344,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3677581692618410934, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10738,8 +10738,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Can Lola please return the manual for the washing machine!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
-  m_sharedMaterial: {fileID: 3677581692618410934, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10828,7 +10828,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3677581692618410934, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15039,23 +15039,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000029802322
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.2488164
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9685507
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000014901161
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0587
       objectReference: {fileID: 0}
     - target: {fileID: 1410979939873930570, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -28.815
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743041, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_Size.x
@@ -15099,27 +15107,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8794599
+      value: -1.7987
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.1244125
+      value: -2.1545
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.69166076
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.14699064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6916595
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.14699087
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15131,7 +15139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743043, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -23.996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1410979941120743044, guid: 0f40533a21691c641bd810f084c4a7f3, type: 3}
       propertyPath: m_Name
