@@ -17,7 +17,13 @@ public class InnerDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (dialogueManager.alreadyTriggered)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                dialogueManager.DisplayNextSentence();
+            }
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -25,13 +31,12 @@ public class InnerDialogue : MonoBehaviour
         {
             if (!dialogueManager.alreadyTriggered)
             {
+                
                 dialogueManager.alreadyTriggered = true;
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
             }
-            else { dialogueManager.DisplayNextSentence(); }
-            other.gameObject.SetActive(false);
-
-            StartCoroutine(dialogueManager.unloadSentence());
+            else { gameObject.SetActive(false); }
+            
         }
     }
     
