@@ -27,14 +27,14 @@ public class DoorLocktext : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Nun"))
+        if (!other.CompareTag("Nun") && doorController.ID != -1)
         {
             StartCoroutine(TextFade(0, 1));
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Nun"))
+        if (!other.CompareTag("Nun") && doorController.ID != -1)
         {
             StartCoroutine(TextFade(1, 0));
         }
