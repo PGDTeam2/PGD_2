@@ -53,6 +53,7 @@ public class DialogueTrigger : MonoBehaviour
             string[] temp = new string[1];
             temp[0] = "I'll just wait here..";
             dialogue.sentences = temp;
+            player.canMove = true;
 
             
         }
@@ -61,7 +62,6 @@ public class DialogueTrigger : MonoBehaviour
         {
             animator.SetBool("walkBack", false);
             dialogueManager.walkBack = false;
-           
             dialogueManager.alreadyTriggered = false;
         }
 

@@ -16,7 +16,7 @@ public class Lunchbox : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E) && !opened)
+        if (Input.GetKey(KeyCode.E) && !opened)
         {
             switchScene.SetActive(true);
             Evan.dialogue = newDialogue;
