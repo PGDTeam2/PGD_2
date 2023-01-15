@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.12
+  m_FogDensity: 0.09
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.131
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17420179, g: 0.19169691, b: 0.20604935, a: 0.131}
+  m_IndirectSpecularColor: {r: 0.0041570966, g: 0.004731508, b: 0.007938247, a: 0.131}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000002, guid: b2096a5c2235a0a48a9af9a3a42f4b87, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5e117434366c2824e9fd386e30abbac5, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 04120e277cbea1743a678151acdeb97a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -10092,7 +10092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Can Lolaa please return the manual for the washing machine!
+  m_text: Can Lola please return the manual for the washing machine!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
   m_sharedMaterial: {fileID: 3677581692618410934, guid: 21a5a1d57f8855541b7b97d12420ca10, type: 2}
@@ -12362,7 +12362,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1710422915032209438, guid: 578231170255ab74ca7cbfaba430e744, type: 3}
       propertyPath: ID
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4172872545933440093, guid: 578231170255ab74ca7cbfaba430e744, type: 3}
       propertyPath: m_TagString
