@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.113
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.117589496, g: 0.120661624, b: 0.11178755, a: 0.113}
+  m_IndirectSpecularColor: {r: 0.0037026901, g: 0.0042304383, b: 0.0071498607, a: 0.113}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -46003,6 +46003,7 @@ Transform:
   - {fileID: 597025368}
   - {fileID: 630168980}
   - {fileID: 1543652373}
+  - {fileID: 9023349199926713397}
   - {fileID: 980632476}
   - {fileID: 564459283}
   - {fileID: 1887518386}
@@ -46015,7 +46016,6 @@ Transform:
   - {fileID: 413548814}
   - {fileID: 1126275714}
   - {fileID: 1287468415}
-  - {fileID: 9023349199926713397}
   - {fileID: 1056853537}
   - {fileID: 1650927480}
   - {fileID: 1173966158}
@@ -49093,7 +49093,7 @@ Transform:
   - {fileID: 9018071795963827677}
   - {fileID: 1760636544}
   m_Father: {fileID: 9022955154557705498}
-  m_RootOrder: 27
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!33 &9025365663205264549
 MeshFilter:
