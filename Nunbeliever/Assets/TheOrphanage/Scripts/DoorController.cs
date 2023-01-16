@@ -12,6 +12,7 @@ public class DoorController : MonoBehaviour
     private bool m_openedByNun;
     private bool m_isHovering;
     private Animator m_animator;
+    private OcclusionPortal occlusionPortal;
 
     public AudioClip openAudio;
     public AudioClip closeAudio;
@@ -21,12 +22,13 @@ public class DoorController : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        //occlusionPortal = GetComponent<OcclusionPortal>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         // if the nun gets in range, open the door and start autoclose coroutine
-        if (other.CompareTag("Nun")&& ID == -1)
+        if (other.CompareTag("Nun") && ID == -1)
         {
             if (!m_isOpen)
             {
@@ -50,8 +52,10 @@ public class DoorController : MonoBehaviour
         // Prevent autoclose when the player interacts with the door
         m_openedByNun = false;
         m_isOpen = open;
-        audioSource.PlayOneShot(open ? openAudio : closeAudio);
+        if (openAudio != null && closeAudio != null)
+            audioSource.PlayOneShot(open ? openAudio : closeAudio);
         m_animator.SetBool("is_open", open);
+        //occlusionPortal.open = open;
     }
 
     public void ToggleDoor()
@@ -71,8 +75,8 @@ public class DoorController : MonoBehaviour
         if (ID == -1 || keys.Contains(ID))
         {
             ToggleDoor();
-            ID= -1;
+            ID = -1;
         }
-            
+
     }
 }

@@ -25,7 +25,7 @@ public class ChaseState : State
         base.Update();
         followPlayer();
         sM.FindPlayer();
-       
+        Debug.Log("see");
 
         if (sM.playerCaught)
         {

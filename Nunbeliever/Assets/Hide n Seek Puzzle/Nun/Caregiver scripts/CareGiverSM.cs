@@ -66,7 +66,7 @@ public class CareGiverSM : StateMachine
             if (Physics.Raycast(transform.position, distance.normalized, out RaycastHit hitInfo, length + 1))
             {
                 //checks if the raycast hits the player and checks if the agent isnt coming back from the spawnpoint
-                if (hitInfo.collider.CompareTag("Player") && !goBackPatrol && !HideMechanic.hiding)
+                if (hitInfo.collider.gameObject.GetComponent<PlayerController>() != null && !goBackPatrol && !HideMechanic.hiding)
                 {
                     //grabs the player and puts him back to the spawnpoint
                     if (hitInfo.distance <= grabLength)
@@ -86,14 +86,13 @@ public class CareGiverSM : StateMachine
 
         if (collider.CompareTag("Door"))
         {
-            if (collider.gameObject.GetComponent<DoorController>().ID != -1)
+            if (collider.gameObject.GetComponent<DoorController>().ID == -1)
             {
                 if (searchState.currentWaypoint != searchState.waypointList.Length - 1)
                 {
                     searchState.currentWaypoint++;
                 }
             }
-            else { return; }
         }
     }
 }
