@@ -34,10 +34,12 @@ public class Menu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             Time.timeScale = 1;
-            playerController.canMove = true;
-           
         }
         
     }
-   
+   public void DeactivateMenu()
+    {
+        playerController.canMove = true;
+        menu.SetActive(false);
+    }
 }

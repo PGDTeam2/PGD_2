@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -32,11 +33,10 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("House d3"))
         {
             dialogueManager.DisplayNextSentence();
         }
-        
     }
     private void Update()
     {
@@ -50,14 +50,19 @@ public class DialogueTrigger : MonoBehaviour
             Vector3 direction = (backPoint.transform.position - transform.position).normalized;
             transform.rotation = Quaternion.LookRotation(direction);
 
+            string[] temp = new string[1];
+            temp[0] = "I'll just wait here..";
+            dialogue.sentences = temp;
             player.canMove = true;
+
+            
         }
 
         if (transform.position == backPoint.transform.position)
         {
             animator.SetBool("walkBack", false);
             dialogueManager.walkBack = false;
-            
+            dialogueManager.alreadyTriggered = false;
         }
 
     }

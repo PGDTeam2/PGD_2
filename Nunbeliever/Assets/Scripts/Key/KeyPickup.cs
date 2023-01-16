@@ -21,9 +21,9 @@ public class KeyPickup : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out var hitInfo, 2))
         {
-                // Send OnHoverChanged only when changed :)
             if (hitInfo.collider.CompareTag("Key"))
             {
+                // Send OnHoverChanged only when changed :)
                 if (!m_isHovering)
                 {
                     m_lastHover = hitInfo.collider.gameObject;
@@ -34,8 +34,19 @@ public class KeyPickup : MonoBehaviour
                 // Pickup key when pressing E
                 if (pressed)
                 {
-                    m_ownedKeys.Add(hitInfo.collider.GetComponent<Key>().ID);
-                    Destroy(hitInfo.collider.gameObject);
+                    if (hitInfo.collider.TryGetComponent<NightStandPickup>(out var nightstand))
+                    {
+                        if (nightstand.IsOpen)
+                        {
+                            m_ownedKeys.Add(hitInfo.collider.GetComponent<Key>().ID);
+                            Destroy(nightstand.Key);
+                        }
+                    }
+                    else
+                    {
+                        Destroy(hitInfo.collider.gameObject);
+                        m_ownedKeys.Add(hitInfo.collider.GetComponent<Key>().ID);
+                    }
                 }
                 return;
             }
