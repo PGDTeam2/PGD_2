@@ -32,8 +32,7 @@ public class CareGiverSM : StateMachine
         chaseState = new ChaseState(this);
     }
     void Start()
-    {
-        
+    {     
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         setState(idleState);
@@ -42,7 +41,6 @@ public class CareGiverSM : StateMachine
     {
         animator.SetInteger("animation", animationState);
     }
-
 
     internal IEnumerator goBackToPatrol()
     {
