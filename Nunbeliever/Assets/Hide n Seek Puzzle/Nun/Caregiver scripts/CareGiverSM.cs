@@ -21,6 +21,7 @@ public class CareGiverSM : StateMachine
     internal bool playerCaught;
     internal bool playerSeen;
     internal bool goBackPatrol;
+    Light light;
 
     Animator animator;
 
@@ -33,7 +34,7 @@ public class CareGiverSM : StateMachine
     }
     void Start()
     {
-        
+        light = GetComponentInChildren<Light>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         setState(idleState);
@@ -42,7 +43,6 @@ public class CareGiverSM : StateMachine
     {
         animator.SetInteger("animation", animationState);
     }
-
 
     internal IEnumerator goBackToPatrol()
     {
@@ -72,6 +72,11 @@ public class CareGiverSM : StateMachine
                     if (hitInfo.distance <= grabLength)
                     {
                         playerCaught = true;
+                        light.enabled = true;
+                    }
+                    else
+                    {
+                        light.enabled = false;
                     }
                     return true;
                 }
@@ -86,7 +91,7 @@ public class CareGiverSM : StateMachine
 
         if (collider.CompareTag("Door"))
         {
-            if (collider.gameObject.GetComponent<DoorController>().ID == -1)
+            if (collider.gameObject.GetComponent<DoorController>().ID != -1)
             {
                 if (searchState.currentWaypoint != searchState.waypointList.Length - 1)
                 {

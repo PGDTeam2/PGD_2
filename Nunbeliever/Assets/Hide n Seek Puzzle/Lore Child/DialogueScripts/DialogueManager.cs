@@ -45,12 +45,12 @@ public class DialogueManager : MonoBehaviour
 
 	public void DisplayNextSentence()
 	{
-		dialogueScreen.SetActive(true);
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
 			return;
 		}
+		dialogueScreen.SetActive(true);
 		
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
@@ -69,7 +69,10 @@ public class DialogueManager : MonoBehaviour
 
 	void EndDialogue()
 	{
-		walkBack = true;
+		if (alreadyTriggered)
+		{
+			walkBack = true;
+		}
 		dialogueScreen.SetActive(false);
 	}
 	internal IEnumerator unloadSentence()

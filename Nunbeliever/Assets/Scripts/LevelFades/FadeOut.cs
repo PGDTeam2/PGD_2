@@ -26,7 +26,7 @@ public class FadeOut : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
             m_whiteOutPanel = GameObject.FindWithTag("WhiteOutPanel");
             StartCoroutine(DoTransition(m_scene, r, g, b));
