@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            menu.active = true;
+            menu.SetActive(true);
         }
 
-        if (menu.active)
+        if (menu.activeSelf)
         {
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
@@ -41,5 +42,10 @@ public class Menu : MonoBehaviour
     {
         playerController.canMove = true;
         menu.SetActive(false);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
