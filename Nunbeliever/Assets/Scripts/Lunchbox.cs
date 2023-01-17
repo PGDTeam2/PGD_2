@@ -13,15 +13,16 @@ public class Lunchbox : MonoBehaviour
     private void Start()
     {
         switchScene = GameObject.FindGameObjectWithTag("SceneSwitch");
+        switchScene.SetActive(false);
     }
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetKey(KeyCode.E) && !opened)
         {
-            switchScene.SetActive(true);
             Evan.dialogue = newDialogue;
             opened = true;
             Destroy(gameObject);
+            switchScene.SetActive(true);
         }
 
     }
