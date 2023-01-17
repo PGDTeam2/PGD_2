@@ -44,8 +44,9 @@ public class Menu : MonoBehaviour
         menu.SetActive(false);
     }
 
-    public void GoToMainMenu()
+    public void RestartLevel()
     {
-        SceneManager.LoadScene("Main Menu");
+        var curScene = SceneManager.GetActiveScene().name;
+        GetComponent<FadeOut>().switchscene(curScene);
     }
 }
