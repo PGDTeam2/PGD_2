@@ -14,6 +14,7 @@ public class FadeOut : MonoBehaviour
     [SerializeField] int g;
     [SerializeField] int b;
     [Tooltip("Time to fade"), SerializeField] float waitTime;
+   
     AudioSource audioSource;
     public AudioClip clip;
     public bool audioIncluded;
@@ -22,6 +23,7 @@ public class FadeOut : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("player"))

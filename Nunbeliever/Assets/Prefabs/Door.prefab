@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1124720258}
   - component: {fileID: 1124720260}
   - component: {fileID: 1124720259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7197337124707822376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 6361646333362689617}
   - component: {fileID: 7272621217337022261}
   - component: {fileID: 2788772080918473336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorA
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 5060979059938099930}
   - component: {fileID: 2413852800927134156}
   - component: {fileID: 1760636545}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 4219788651719000351}
   - component: {fileID: 4225378414570645875}
   - component: {fileID: 4184456980058953267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoorAFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
