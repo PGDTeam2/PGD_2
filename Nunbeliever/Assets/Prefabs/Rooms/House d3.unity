@@ -9668,6 +9668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3497906381029046098, guid: ea9bbaaee0cfade4a9995f32c6785262, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea9bbaaee0cfade4a9995f32c6785262, type: 3}
 --- !u!1 &1210936266 stripped
@@ -13606,7 +13610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 94224695936046277, guid: b831ac4d48dcf9c448d8f00f8323b4b6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2582653963168022581, guid: b831ac4d48dcf9c448d8f00f8323b4b6, type: 3}
       propertyPath: m_Name

@@ -8882,6 +8882,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2534630395568899020, guid: 99fea4afa858b194cb486127705f6711, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     - target: {fileID: 2535325935917966599, guid: 99fea4afa858b194cb486127705f6711, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 2
