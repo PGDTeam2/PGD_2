@@ -8873,6 +8873,14 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6775819993019610097, guid: 99fea4afa858b194cb486127705f6711, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.337
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775819993019610097, guid: 99fea4afa858b194cb486127705f6711, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.721
+      objectReference: {fileID: 0}
     - target: {fileID: 6780363206172967616, guid: 99fea4afa858b194cb486127705f6711, type: 3}
       propertyPath: m_RootOrder
       value: 14

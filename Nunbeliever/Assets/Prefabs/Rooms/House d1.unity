@@ -4555,7 +4555,7 @@ MonoBehaviour:
     sentences:
     - What happened here?
     - It looks like someone had gone insane..
-    - Maybe i should get back to that boy...
+    - Maybe i should get back to sleep...
   waitingTime: 0.1
   SceneSwitch: {fileID: 8921805753005696722}
 --- !u!114 &662330908 stripped
