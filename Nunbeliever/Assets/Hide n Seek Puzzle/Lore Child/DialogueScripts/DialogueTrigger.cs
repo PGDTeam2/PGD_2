@@ -53,8 +53,10 @@ public class DialogueTrigger : MonoBehaviour
             string[] temp = new string[1];
             temp[0] = "I'll just wait here..";
             dialogue.sentences = temp;
-            player.canMove = true;
-
+            if (dialogueManager.alreadyTriggered)
+            {
+                player.canMove = true;
+            }
             
         }
 
