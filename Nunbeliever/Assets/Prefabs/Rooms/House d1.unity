@@ -3253,6 +3253,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9021942072283276888, guid: 21e678ae48f9a664ea8241095d082550, type: 3}
+      propertyPath: m_TagString
+      value: Bed
+      objectReference: {fileID: 0}
     - target: {fileID: 9022955153747073466, guid: 21e678ae48f9a664ea8241095d082550, type: 3}
       propertyPath: m_Name
       value: Office (2)
