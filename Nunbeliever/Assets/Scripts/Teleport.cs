@@ -5,7 +5,7 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public Transform teleportTarget;
-    public Transform faceDirection;
+    
     
 
     private void OnTriggerEnter(Collider other)
