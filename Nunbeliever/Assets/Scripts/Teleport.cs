@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Teleport : MonoBehaviour
@@ -20,7 +21,8 @@ public class Teleport : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         player.transform.position = teleportTarget.position;
-        player.transform.LookAt(faceDirection);
+        player.transform.eulerAngles = new Vector3(4.5f, 0, 0);
+        
 
     }
 }
