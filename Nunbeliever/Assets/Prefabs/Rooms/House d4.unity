@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.09
+  m_FogDensity: 0.12
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 332e71d363d8a4c4592ec899790d4de7, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5e117434366c2824e9fd386e30abbac5, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 04120e277cbea1743a678151acdeb97a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -4677,6 +4677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f61bbcabbce8d4e8b6dc56691c2be4, type: 3}
+--- !u!1 &554521550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4202820389867351155, guid: e6f61bbcabbce8d4e8b6dc56691c2be4, type: 3}
+  m_PrefabInstance: {fileID: 554521549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &559930458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4858345836758184, guid: 694eaafb4e20aa34f9086d00a9c097d2, type: 3}
@@ -7501,6 +7506,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 661004824, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
+      propertyPath: SceneSwitch
+      value: 
+      objectReference: {fileID: 554521550}
+    - target: {fileID: 661004824, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 1808114643}
+    - target: {fileID: 661004824, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1131167684, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
       propertyPath: forceMagnitude
       value: 2
