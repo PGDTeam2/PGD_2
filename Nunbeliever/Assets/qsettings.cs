@@ -10,6 +10,7 @@ public class qsettings : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
+        Application.targetFrameRate = 144;
     }
 
     // Update is called once per frame
