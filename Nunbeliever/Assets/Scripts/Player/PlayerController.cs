@@ -48,11 +48,13 @@ public class PlayerController : MonoBehaviour
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 144;
+        
     }
 
     void Update()
     {
         Movement();
+   
     }
     void Movement()
     {

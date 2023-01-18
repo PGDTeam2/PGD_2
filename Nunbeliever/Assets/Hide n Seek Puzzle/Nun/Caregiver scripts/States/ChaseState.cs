@@ -45,7 +45,7 @@ public class ChaseState : State
             }
             machine.changeState(sM.searchState);
         }
-        if (!HideMechanic.hiding)
+        if (HideMechanic.hiding)
         {
             machine.changeState(sM.searchState);
         }
