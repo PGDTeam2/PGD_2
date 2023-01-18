@@ -8261,7 +8261,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6955764207865991739, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
   m_PrefabInstance: {fileID: 979273406}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979273407}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d2369d5f23b6a14dbc6d8c2b819c845, type: 3}
@@ -11340,22 +11340,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 820953066, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: Priority
-      value: 189
-      objectReference: {fileID: 0}
-    - target: {fileID: 820953066, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: m_Volume
-      value: 0.512
-      objectReference: {fileID: 0}
-    - target: {fileID: 820953066, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: OutputAudioMixerGroup
+    - target: {fileID: 979273408, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
+      propertyPath: SceneSwitch
       value: 
-      objectReference: {fileID: 6437898178940780649, guid: 06cde0b187d16d7438165589b6bbc056, type: 2}
-    - target: {fileID: 6357878732204822733, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: volumeLayer.m_Bits
-      value: 384
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2122846376}
+    - target: {fileID: 979273408, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 705213710}
     - target: {fileID: 6955764207865991733, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -11404,51 +11396,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6955764207865991737, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955764207865991739, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: walkAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: ed6bb89be19053b4abdfe85ac7daf25f, type: 3}
-    - target: {fileID: 6955764209410838114, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955764209410838114, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 6955764209410838143, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
---- !u!1 &979273407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6955764207865991737, guid: 3b40ec4690602f64e971f909348d203e, type: 3}
-  m_PrefabInstance: {fileID: 979273406}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &979273408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979273407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 140dfbd6314b6214888d8b920652a828, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 705213710}
-  dialogue:
-    name: me
-    sentences: []
-  waitingTime: 0.1
-  SceneSwitch: {fileID: 2122846376}
 --- !u!4 &979614543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4017353530050800, guid: 443742fb0beb98549a2b5875d8a75b25, type: 3}
