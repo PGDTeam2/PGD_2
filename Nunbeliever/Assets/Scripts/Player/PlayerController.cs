@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     /* This script manages the movement of the player using the
      * character controller.
      */
+    [SerializeField]
+    private float jumpspeed;
+
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float gravity = 9.8f;
@@ -28,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip walkAudio;
     AudioSource audioSource;
 
+    [SerializeField]
+    private JumpTrigger jumpTrigger;
     float rotationX = 0;
 
     [HideInInspector]
@@ -96,6 +101,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            if (jumpTrigger.jumpActive == true)
+            {
+                moveDirection.y = jumpspeed;
+            }
+        }
+
+
         // Move the controller
         if (characterController.enabled)
             characterController.Move(moveDirection * Time.deltaTime);
@@ -115,6 +130,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0); // left right
         }
     }
+
     private IEnumerator RegenerateStamina()
     {
         yield return new WaitForSeconds(8f);
