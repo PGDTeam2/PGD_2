@@ -4620,7 +4620,7 @@ MonoBehaviour:
     sentences:
     - What happened here?
     - It looks like someone had gone insane..
-    - Maybe i should get back to that boy...
+    - Maybe i should get back to sleep...
   waitingTime: 0.1
   SceneSwitch: {fileID: 8921805753005696722}
 --- !u!114 &662330908 stripped
@@ -14227,6 +14227,10 @@ PrefabInstance:
     - target: {fileID: 4072289922161828111, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
       propertyPath: m_Name
       value: CareGiver(hide and seek)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072289922161828111, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c211950fcb7fa81458fa59bef3594379, type: 3}
