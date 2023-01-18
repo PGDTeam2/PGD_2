@@ -29,6 +29,7 @@ public class InnerDialogue : MonoBehaviour
     {
         if (other.CompareTag("DialogueTrigger"))
         {
+            
             StartCoroutine(careGiverSM.goBackToPatrol());
             careGiverSM.currentState = careGiverSM.searchState;
             if (!dialogueManager.alreadyTriggered)
