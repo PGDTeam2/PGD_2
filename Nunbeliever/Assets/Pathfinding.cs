@@ -1,49 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Pathfinding : MonoBehaviour
 {
     public GameObject[] waypoints;
     public float moveSpeed = 1.0f;
     public float waitTime = 2.0f;
-
+    
     private int currentWaypoint = 0;
-
-  
-
-    public void MoveToNextWaypoint()
+    NavMeshAgent navMeshAgent;
+   Animator animator;
+    public static bool canWalk = false;
+    private void Start()
     {
-        if (currentWaypoint < waypoints.Length)
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+    }
+    public void Update()
+    { if (canWalk)
         {
-            iTween.MoveTo(gameObject, iTween.Hash("position", waypoints[currentWaypoint].transform.position, "speed", moveSpeed, "easetype", "linear", "oncomplete", "WaitForSeconds"));
+            if (currentWaypoint < waypoints.Length)
+            {
+                animator.SetBool("Walking", true);
+                navMeshAgent.destination = waypoints[currentWaypoint].transform.position;
+            }
+
+            if (waypoints[currentWaypoint].transform.position.x + waypoints[currentWaypoint].transform.position.z == navMeshAgent.transform.position.x + navMeshAgent.transform.position.z)
+            {
+
+                animator.SetBool("Walking", false);
+                currentWaypoint++;
+            }
+            if (currentWaypoint == waypoints.Length)
+            {
+                gameObject.SetActive(false);
+            }
         }
+      
     }
 
-    public void WaitForSeconds()
-    {
-        StartCoroutine(WaitAndMove(waitTime));
+
         
-    }
-
-    IEnumerator WaitAndMove(float time)
-    {
-        transform.Rotate(0, -90, 0);
-        yield return new WaitForSeconds(time);
-        transform.Rotate(0, 90, 0);
-        currentWaypoint++;
-
-        if(currentWaypoint >= waypoints.Length)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            MoveToNextWaypoint();
-        }
-
-        
 
     }
-}
+
 
