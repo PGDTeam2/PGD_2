@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 9380d62f91858b047bed6508cac67892, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a5146eccdcaa33e41b8f5be8e30dc989, type: 2}
 --- !u!1 &2638878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4815764012230061518, guid: c4cf54d84b03ef84699e9fb01a89df15, type: 3}
@@ -9102,7 +9102,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 40435ba3c32ffd547b75c2997acf0526, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d8d36d39476c3374b817043e5f700631, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -10903,7 +10903,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Can Lola please return the manual for the washing machine!
+  m_text: Can Lolaa please return the manual for the washing machine!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

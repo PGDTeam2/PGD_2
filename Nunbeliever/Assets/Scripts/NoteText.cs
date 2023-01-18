@@ -27,7 +27,7 @@ public class NoteText : MonoBehaviour
     }
     IEnumerator TextFade(float start, float end)
     {
-        float duration = 2f; //Fade out over 2 seconds.
+        float duration = 1f; //Fade out over 1 seconds.
         float currentTime = 0f;
         while (currentTime < duration)
         {
