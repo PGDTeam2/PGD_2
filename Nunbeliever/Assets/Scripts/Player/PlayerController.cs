@@ -104,7 +104,6 @@ public class PlayerController : MonoBehaviour
 
             if (jumpTrigger.jumpActive == true)
             {
-                Debug.LogWarning("jump");
                 moveDirection.y = jumpspeed;
             }
         }
