@@ -30,7 +30,6 @@ public class Pathfinding : MonoBehaviour
             if (waypoints[currentWaypoint].transform.position.x + waypoints[currentWaypoint].transform.position.z == navMeshAgent.transform.position.x + navMeshAgent.transform.position.z)
             {
 
-                animator.SetBool("Walking", false);
                 currentWaypoint++;
             }
             if (currentWaypoint == waypoints.Length)
