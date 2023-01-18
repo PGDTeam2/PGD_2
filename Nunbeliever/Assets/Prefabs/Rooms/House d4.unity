@@ -11613,19 +11613,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5193895146534613203, guid: 9994eb5f4d0760548a0f329e05fa5396, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: I heared that last year one of the kids succefully escaped..
+      value: I heard that last year one of the kids succefully escaped..
       objectReference: {fileID: 0}
     - target: {fileID: 5193895146534613203, guid: 9994eb5f4d0760548a0f329e05fa5396, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: 'I heared something scary while she left. '
+      value: 'I heard something scary while she left. '
       objectReference: {fileID: 0}
     - target: {fileID: 5193895146534613203, guid: 9994eb5f4d0760548a0f329e05fa5396, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: I dont think she escaped. I dont think she made it.
+      value: I dont think she escaped. I don't think she made it.
       objectReference: {fileID: 0}
     - target: {fileID: 5193895146534613203, guid: 9994eb5f4d0760548a0f329e05fa5396, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: Just be carfull okay.
+      value: Just be careful okay.
       objectReference: {fileID: 0}
     - target: {fileID: 5737257597135352215, guid: 9994eb5f4d0760548a0f329e05fa5396, type: 3}
       propertyPath: m_RootOrder
