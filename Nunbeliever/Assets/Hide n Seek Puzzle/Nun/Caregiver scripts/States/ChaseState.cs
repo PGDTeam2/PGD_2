@@ -45,6 +45,10 @@ public class ChaseState : State
             }
             machine.changeState(sM.searchState);
         }
+        if (!HideMechanic.hiding)
+        {
+            machine.changeState(sM.searchState);
+        }
         
     }
     internal void followPlayer()
