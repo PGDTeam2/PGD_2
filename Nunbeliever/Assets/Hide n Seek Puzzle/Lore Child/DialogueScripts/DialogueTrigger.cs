@@ -25,7 +25,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!dialogueManager.alreadyTriggered)
         {
+            if (dialogueManager.walkBack) 
+            { 
             player.canMove = false; // the player can't move in this dialogue
+             }
             TriggerDialogue();
             animator.SetTrigger("Talk"); //animation for evan to talk
             dialogueManager.alreadyTriggered = true;
