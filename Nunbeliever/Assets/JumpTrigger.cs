@@ -5,11 +5,6 @@ using UnityEngine;
 public class JumpTrigger : MonoBehaviour
 {
     public bool jumpActive = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,9 +22,5 @@ public class JumpTrigger : MonoBehaviour
             jumpActive = false;
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

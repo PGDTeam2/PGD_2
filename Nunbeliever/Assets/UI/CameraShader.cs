@@ -9,15 +9,20 @@ public class CameraShader : MonoBehaviour
     [SerializeField]
     private bool on;
 
-    public bool Switch { set { on = value; } }
+
+    public void Switch(bool on)
+    {
+        this.on = on;
+        material.SetInt("_Boolean", on ? 1 : 0);
+    }
 
     private void Start()
     {
-        material.SetInt("_Boolean", on ? 1 : 0);
+        Switch(on);
     }
 
     private void OnApplicationQuit()
     {
-        material.SetInt("_Boolean", 0);
+        Switch(false);
     }
 }
