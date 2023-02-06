@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager.UI;
+
 using UnityEngine;
 
 public class AnimationTrigger : MonoBehaviour
@@ -9,9 +9,10 @@ public class AnimationTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Nun"))
         {
-            targetObject.GetComponent<Pathfinding>().MoveToNextWaypoint();
+            Debug.Log("h");
+            Pathfinding.canWalk = true;
         }
     }
 }
