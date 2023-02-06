@@ -17,11 +17,12 @@ public class CareGiverSM : StateMachine
     [SerializeField] private float grabLength = 2f;
     [SerializeField] internal float fov = 90;
     [SerializeField] LayerMask layer;
+    [SerializeField] Light _light;
 
     internal bool playerCaught;
     internal bool playerSeen;
     internal bool goBackPatrol;
-    Light light;
+
 
     Animator animator;
 
@@ -34,7 +35,6 @@ public class CareGiverSM : StateMachine
     }
     void Start()
     {
-        light = GetComponentInChildren<Light>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         setState(idleState);
@@ -72,12 +72,13 @@ public class CareGiverSM : StateMachine
                     if (hitInfo.distance <= grabLength)
                     {
                         playerCaught = true;
-                        light.enabled = true;
+                        _light.enabled = true;
                     }
                     else
                     {
-                        light.enabled = false;
+                        _light.enabled = false;
                     }
+                    
                     return true;
                 }
                 else return false;

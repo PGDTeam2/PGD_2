@@ -25,7 +25,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!dialogueManager.alreadyTriggered)
         {
-            player.canMove = false; // the player can't move in this dialogue
+             // the player can't move in this dialogue
             TriggerDialogue();
             animator.SetTrigger("Talk"); //animation for evan to talk
             dialogueManager.alreadyTriggered = true;
@@ -53,7 +53,7 @@ public class DialogueTrigger : MonoBehaviour
             string[] temp = new string[1];
             temp[0] = "I'll just wait here..";
             dialogue.sentences = temp;
-            player.canMove = true;
+            
 
             
         }

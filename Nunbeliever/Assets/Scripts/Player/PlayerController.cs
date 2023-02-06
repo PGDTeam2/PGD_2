@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(CharacterController))]
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 moveDirection = Vector3.zero;
     Vector2 rotation = Vector2.zero;
 
+    public Light _light;
     [HideInInspector]
     public bool canMove = true;
 
@@ -99,16 +101,26 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.F) && !_light.enabled)
         {
-
-            if (jumpTrigger.jumpActive == true)
-            {
-                moveDirection.y = jumpspeed;
-            }
+            _light.enabled = true;
+        }else if(Input.GetKey(KeyCode.F)&& _light.enabled)
+        {
+            _light.enabled = false;
         }
 
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("House d4"))
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
 
+                if (jumpTrigger.jumpActive == true)
+                {
+                    moveDirection.y = jumpspeed;
+                }
+            }
+
+        }
         // Move the controller
         if (characterController.enabled)
             characterController.Move(moveDirection * Time.deltaTime);
